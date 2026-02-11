@@ -1,0 +1,47 @@
+:root {
+  --bg: #e6f0fa;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --accent: #2f6fb3;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  background: #d8e8f7;
+}
+h1 { margin: 0 0 0.75rem; font-size: 2rem; }
+h2 { margin-top: 0; }
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+main {
+  max-width: 900px;
+  margin: 1.25rem auto 2rem;
+  padding: 0 1rem;
+}
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #4b5563;
+}
