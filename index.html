@@ -3,47 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Voice Chatbot for Grief Healing</title>
+  <title>EchoCare Demo | Voice Chat</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <h1>AI Voice Chatbot for Grief Healing</h1>
-    <p>Supportive, grief-specific guidance with safety, consent, and transparency.</p>
-    <a class="btn" href="#about">Learn More</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">EchoCare</a>
+      <nav>
+        <a class="active" href="demo.html">Demo</a>
+        <a href="memory.html">Memory</a>
+        <a href="safety.html">Safety</a>
+      </nav>
+      <a class="btn btn-outline" href="index.html">Home</a>
+    </div>
   </header>
 
-  <main>
-    <section id="about" class="card">
-      <h2>Background and Significance</h2>
-      <p>Grief can affect mental and physical health. Our concept focuses on accessible support for college students.</p>
-    </section>
+  <main class="section">
+    <div class="container two-col">
+      <section class="card">
+        <h2>Voice Chat Demo</h2>
+        <p class="note">Simulated interface for prototype testing.</p>
 
-    <section class="card">
-      <h2>Existing Solutions and Gap</h2>
-      <ul>
-        <li>Existing tools provide pieces of the solution.</li>
-        <li>Gap: grief-specific voice support with clear safeguards.</li>
-      </ul>
-    </section>
+        <div class="chips">
+          <button class="chip" data-scenario="advice">I miss their advice</button>
+          <button class="chip" data-scenario="sleep">I cannot sleep</button>
+          <button class="chip" data-scenario="anniversary">Anniversary is coming up</button>
+        </div>
 
-    <section class="card">
-      <h2>Proposed Solution</h2>
-      <ul>
-        <li>Voice conversation flow with structured coping prompts.</li>
-        <li>User-controlled memory settings.</li>
-        <li>Advice Memory Mode with consent and disclosure.</li>
-      </ul>
-    </section>
+        <div class="chat-window" id="chatWindow">
+          <div class="bubble user">User: I feel overwhelmed today.</div>
+          <div class="bubble bot">EchoCare: I hear you. Would you like a grounding step, a memory prompt, or quiet breathing?</div>
+        </div>
 
-    <section class="card">
-      <h2>Project Timeline</h2>
-      <p>Weeks 4–10: prototype build, testing, iteration, and final presentation.</p>
-    </section>
+        <div class="controls">
+          <button class="btn" id="recordBtn">Start Microphone</button>
+          <button class="btn btn-outline" id="playBtn">Play Response</button>
+        </div>
+
+        <p id="statusText" class="status">Status: Ready</p>
+      </section>
+
+      <aside class="card">
+        <h3>How this flow works</h3>
+        <ol>
+          <li>Select a scenario chip.</li>
+          <li>Simulate voice input and transcript state.</li>
+          <li>Receive a structured supportive response.</li>
+        </ol>
+        <div class="divider"></div>
+        <h4>Design goals</h4>
+        <ul>
+          <li>Validate grief waves</li>
+          <li>Offer coping actions</li>
+          <li>Encourage human support when needed</li>
+        </ul>
+        <a class="btn btn-outline full" href="memory.html">Go to Advice Memory Mode</a>
+      </aside>
+    </div>
   </main>
 
-  <footer>
-    <p>Team 4 • INF 172 • Sponsor: Dr. Young</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
