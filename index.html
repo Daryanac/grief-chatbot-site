@@ -3,66 +3,297 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EchoCare Demo | Voice Chat</title>
+  <title>EchoCare | Grief Support Companion</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html">EchoCare</a>
-      <nav>
-        <a class="active" href="demo.html">Demo</a>
-        <a href="memory.html">Memory</a>
-        <a href="safety.html">Safety</a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="logo-dot"></span>
+        <span class="brand-name">EchoCare</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="#safety">Safety</a>
+        <a class="nav-link" href="#privacy">Privacy</a>
+        <a class="nav-link" href="#how">How It Works</a>
       </nav>
-      <a class="btn btn-outline" href="index.html">Home</a>
+      <a class="btn" href="#waitlist">Join Waitlist</a>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container two-col">
-      <section class="card">
-        <h2>Voice Chat Demo</h2>
-        <p class="note">Simulated interface for prototype testing.</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Warm support, clear boundaries.</div>
+          <h1>Support during grief—designed to feel safe.</h1>
+          <p class="subtitle">
+            EchoCare is a grief support companion concept built around consent-first design, user control,
+            and safety guidance—so people can feel heard without replacing human care.
+          </p>
 
-        <div class="chips">
-          <button class="chip" data-scenario="advice">I miss their advice</button>
-          <button class="chip" data-scenario="sleep">I cannot sleep</button>
-          <button class="chip" data-scenario="anniversary">Anniversary is coming up</button>
+          <!-- Above-the-fold trust priorities based on survey -->
+          <div class="alert-row" id="safety">
+            <div class="alert">
+              <div class="alert-title">Safety Disclaimer</div>
+              <div class="alert-text">
+                This is supportive technology, not therapy and not a replacement for a person. If you are in danger
+                or need urgent help, contact local emergency services.
+              </div>
+            </div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Supportive, not therapy</span>
+            <span class="pill">Consent required</span>
+            <span class="pill">User-controlled memory</span>
+            <span class="pill">No “secret” data use</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn" href="#waitlist">Join Waitlist</a>
+            <button class="btn btn-outline" type="button" id="openConsent">View Consent & Privacy</button>
+          </div>
+
+          <div class="mini-stats">
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">want “not therapy” stated clearly</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">92%</div>
+              <div class="stat-label">want consent & privacy shown on landing + onboarding</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Most</div>
+              <div class="stat-label">are not open to voice replication by default</div>
+            </div>
+          </div>
         </div>
 
-        <div class="chat-window" id="chatWindow">
-          <div class="bubble user">User: I feel overwhelmed today.</div>
-          <div class="bubble bot">EchoCare: I hear you. Would you like a grounding step, a memory prompt, or quiet breathing?</div>
+        <!-- VISUAL MOCK -->
+        <div class="hero-visual card">
+          <div class="visual-header">
+            <div class="chipline">
+              <span class="chip">Warm tone</span>
+              <span class="chip">Clear disclosures</span>
+              <span class="chip">Opt-in features</span>
+            </div>
+          </div>
+
+          <div class="mock-chat">
+            <div class="bubble user">I miss their advice right now.</div>
+            <div class="bubble bot">
+              I’m here with you. Would you like a grounding step, or a reminder of guidance you’ve saved for moments like this?
+            </div>
+          </div>
+
+          <div class="mock-actions">
+            <button class="action" type="button">Grounding (60s)</button>
+            <button class="action" type="button">Advice Memory (Opt-in)</button>
+            <button class="action" type="button">Find human support</button>
+          </div>
+
+          <p class="fineprint">
+            Voice replication is never on by default and requires explicit consent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- YOUR FEEDBACK -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>What people told us matters most</h2>
+          <p class="muted">We designed this landing page around the most common survey concerns.</p>
         </div>
 
-        <div class="controls">
-          <button class="btn" id="recordBtn">Start Microphone</button>
-          <button class="btn btn-outline" id="playBtn">Play Response</button>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Lead with safety</h3>
+            <p>Users want clear disclaimers and a safety path before anything else.</p>
+          </article>
+
+          <article class="card">
+            <h3>Protect privacy</h3>
+            <p>Privacy and data misuse are top concerns, so disclosures must be explicit and early.</p>
+          </article>
+
+          <article class="card">
+            <h3>Avoid dependence</h3>
+            <p>We set boundaries and encourage human support to reduce emotional dependence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY / CONSENT -->
+    <section id="privacy" class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Privacy & consent (shown early on purpose)</h2>
+          <p class="muted">Plain-language rules that match user expectations.</p>
         </div>
 
-        <p id="statusText" class="status">Status: Ready</p>
-      </section>
+        <div class="grid-2">
+          <div class="card">
+            <h3>What we do</h3>
+            <ul class="list">
+              <li>Ask for consent before collecting any personal information.</li>
+              <li>Let users review, edit, and delete saved “Grief Context Memory.”</li>
+              <li>Show clear disclosures on both the landing page and onboarding.</li>
+            </ul>
+          </div>
 
-      <aside class="card">
-        <h3>How this flow works</h3>
-        <ol>
-          <li>Select a scenario chip.</li>
-          <li>Simulate voice input and transcript state.</li>
-          <li>Receive a structured supportive response.</li>
-        </ol>
-        <div class="divider"></div>
-        <h4>Design goals</h4>
-        <ul>
-          <li>Validate grief waves</li>
-          <li>Offer coping actions</li>
-          <li>Encourage human support when needed</li>
-        </ul>
-        <a class="btn btn-outline full" href="memory.html">Go to Advice Memory Mode</a>
-      </aside>
-    </div>
+          <div class="card">
+            <h3>What we do not do</h3>
+            <ul class="list">
+              <li>We do not claim to replace therapy, clinicians, or real relationships.</li>
+              <li>We do not enable voice replication by default.</li>
+              <li>We do not use private chats to train models without explicit opt-in.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Voice feature is optional.</strong>
+          <span>
+            If offered, it is strictly opt-in, consent-gated, and designed to avoid deception (the system must not claim to be the loved one).
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>How it works (concept)</h2>
+          <p class="muted">Supportive conversations + coping tools, with boundaries and safety.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step card">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Onboarding with consent</h3>
+              <p>Users choose what to share, what to save, and what should never be stored.</p>
+            </div>
+          </div>
+
+          <div class="step card">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Structured support</h3>
+              <p>Short coping prompts, grounding exercises, and “listener mode” for venting safely.</p>
+            </div>
+          </div>
+
+          <div class="step card">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Memory with user control</h3>
+              <p>Grief Context Memory is editable and deletable, with clear boundaries to reduce dependence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAITLIST -->
+    <section id="waitlist" class="section section-alt">
+      <div class="container waitlist">
+        <h2>Join the waitlist</h2>
+        <p class="muted">We are collecting feedback to improve safety, privacy clarity, and tone.</p>
+
+        <form class="waitlist-form" id="waitlistForm">
+          <input id="email" type="email" placeholder="Email address" required />
+          <button class="btn" type="submit">Sign Up</button>
+        </form>
+
+        <p class="muted small">
+          Want to share design feedback now?
+          <!-- Replace # with your Google Form link -->
+          <a href="#" class="link">Take our 2-minute survey</a>
+        </p>
+
+        <p class="fineprint">
+          Prototype concept for course demonstration. Not medical advice.
+        </p>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="muted small">EchoCare Prototype • Team 4 • Sponsor: Dr. Young</span>
+      <span class="muted small">© 2026</span>
+    </div>
+  </footer>
+
+  <!-- CONSENT MODAL -->
+  <div class="modal" id="consentModal" aria-hidden="true">
+    <div class="modal-backdrop" id="closeConsentBackdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 id="modalTitle">Consent & Privacy Summary</h3>
+        <button class="icon-btn" id="closeConsent" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="muted">
+          Based on survey feedback, we keep disclosures simple and visible.
+        </p>
+        <ul class="list">
+          <li>This tool is supportive technology, not therapy and not a replacement for a person.</li>
+          <li>Consent is required before any personal data is stored.</li>
+          <li>Saved memory is user-approved and can be edited or deleted at any time.</li>
+          <li>Voice replication (if offered) is never the default and requires explicit opt-in consent.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="closeConsent2" type="button">Close</button>
+        <a class="btn" href="#waitlist">Join Waitlist</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mock waitlist behavior (no backend)
+    document.getElementById("waitlistForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      if (!email) return;
+      alert("Thanks! You are on the waitlist (mock).");
+      document.getElementById("email").value = "";
+    });
+
+    // Consent modal
+    const modal = document.getElementById("consentModal");
+    const openBtn = document.getElementById("openConsent");
+    const closeBtn = document.getElementById("closeConsent");
+    const closeBtn2 = document.getElementById("closeConsent2");
+    const backdrop = document.getElementById("closeConsentBackdrop");
+
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    closeBtn2.addEventListener("click", closeModal);
+    backdrop.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
 </body>
 </html>
