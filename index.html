@@ -1,549 +1,411 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lantern — You don’t have to grieve alone</title>
-    <meta
-      name="description"
-      content="Lantern is a supportive grief companion designed for college students. Built around consent, privacy, and crisis-safe guidance."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lantern — Supportive grief companion for students</title>
+  <meta name="description" content="Lantern is a supportive grief companion for students—built around consent, boundaries, and crisis-safe guidance." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-  <body>
-    <!-- Top Bar -->
-    <header class="nav">
-      <div class="nav__inner container">
-        <a class="brand" href="#top" aria-label="Lantern home">
-          <span class="brand__mark" aria-hidden="true">✦</span>
-          <span class="brand__name">Lantern</span>
-        </a>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Lantern home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">Lantern</span>
+      </a>
 
-        <nav class="nav__links" aria-label="Primary">
-          <a href="#how">How it works</a>
-          <a href="#features">Features</a>
-          <a href="#trust">Trust & Safety</a>
-          <a href="#faq">Frequently asked questions</a>
-        </nav>
+      <nav class="nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#safety">Trust & safety</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-        <div class="nav__actions">
-          <button class="btn btn--ghost" type="button" data-scroll="#trust">
-            Safety first
-          </button>
-          <button class="btn btn--primary" type="button" data-open="waitlist">
-            Join waitlist
-          </button>
-
-          <button class="nav__menu" type="button" aria-label="Open menu" aria-expanded="false" data-menu>
-            <span></span><span></span><span></span>
-          </button>
-        </div>
+      <div class="topbar-cta">
+        <button class="btn btn-ghost" id="openSafety" type="button">Safety first</button>
+        <a class="btn btn-primary" href="#waitlist">Join waitlist</a>
       </div>
 
-      <!-- Mobile menu -->
-      <div class="nav__mobile" data-mobile hidden>
-        <div class="container nav__mobileInner">
-          <a href="#how" data-close>How it works</a>
-          <a href="#features" data-close>Features</a>
-          <a href="#trust" data-close>Trust & Safety</a>
-          <a href="#faq" data-close>Frequently asked questions</a>
-          <button class="btn btn--primary w100" type="button" data-open="waitlist">
-            Join waitlist
-          </button>
-        </div>
-      </div>
-    </header>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-    <!-- Hero -->
-    <main id="top">
-      <section class="hero">
-        <div class="hero__bg" aria-hidden="true"></div>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#safety">Trust & safety</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary mobile-nav-btn" href="#waitlist">Join waitlist</a>
+    </div>
+  </header>
 
-        <div class="container hero__grid">
-          <div class="hero__copy">
-            <p class="pill">
-              Designed for college students • Supportive technology (not therapy)
-            </p>
+  <!-- Hero (keep simple, not busy) -->
+  <main id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-            <h1>You don’t have to grieve alone.</h1>
-
-            <p class="subhead">
-              Lantern is a supportive grief companion that listens, reflects, and helps you
-              find resources—built around consent, boundaries, and crisis-safe guidance.
-            </p>
-
-            <div class="ctaRow">
-              <button class="btn btn--primary" type="button" data-open="waitlist">
-                Join the waitlist
-              </button>
-              <button class="btn btn--ghost" type="button" data-scroll="#how">
-                Learn more
-              </button>
-            </div>
-
-            <div class="metaRow">
-              <div class="meta">
-                <div class="meta__kpi">66.7%</div>
-                <div class="meta__label">not open to voice replication</div>
-              </div>
-              <div class="meta">
-                <div class="meta__kpi">91.7%</div>
-                <div class="meta__label">want consent info on landing + onboarding</div>
-              </div>
-              <div class="meta">
-                <div class="meta__kpi">100%</div>
-                <div class="meta__label">want “not therapy” stated clearly</div>
-              </div>
-            </div>
-
-            <p class="fineprint">
-              If you are in immediate danger or considering self-harm, call 911 (US) or your local emergency number.
-              You can also call or text <strong>988</strong> in the US for the Suicide & Crisis Lifeline.
-            </p>
-          </div>
-
-          <div class="hero__art">
-            <!-- Replace the src with your downloaded foreground image filename -->
-            <div class="heroCard">
-              <img
-                class="heroImg"
-                src="foreground.png"
-                alt="Illustration representing supportive connection"
-                onerror="this.closest('.heroCard').classList.add('heroCard--placeholder'); this.remove();"
-              />
-              <div class="heroPlaceholder">
-                <div class="heroPlaceholder__title">Foreground image</div>
-                <div class="heroPlaceholder__text">
-                  Add your downloaded illustration as <code>foreground.png</code>.
-                </div>
-              </div>
-
-              <div class="toast">
-                <span class="dot" aria-hidden="true"></span>
-                <span>Always here for you</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Trust strip (survey-driven) -->
-      <section class="strip" id="trust">
-        <div class="container strip__grid">
-          <div class="strip__title">
-            <h2>Trust & Safety come first.</h2>
-            <p>
-              Your survey responses were clear: people want strong boundaries, transparency,
-              and crisis support—early.
-            </p>
-          </div>
-
-          <div class="strip__cards">
-            <article class="card">
-              <h3>Consent + clear boundaries</h3>
-              <p>
-                We will require explicit consent, explain what the tool can and cannot do,
-                and remind users it is <strong>not their loved one</strong>.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Privacy-forward design</h3>
-              <p>
-                “Privacy and data misuse” was a top concern. The site emphasizes data
-                minimization, local control, and clear policies.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Crisis-safe by default</h3>
-              <p>
-                If someone is in crisis, the site routes to real help immediately and avoids
-                harmful “therapy-like” promises.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section class="section" id="features">
-        <div class="container">
-          <div class="sectionHead">
-            <h2>Built for support—without pretending to be a person.</h2>
-            <p>
-              Many respondents felt uneasy about voice replication and emotional dependence. These features
-              are designed to reduce those risks.
-            </p>
-          </div>
-
-          <div class="grid3">
-            <article class="card card--icon">
-              <div class="icon">🫧</div>
-              <h3>Neutral, calm tone</h3>
-              <p>Default language avoids “overly human” messaging and stays grounded and gentle.</p>
-            </article>
-
-            <article class="card card--icon">
-              <div class="icon">🧭</div>
-              <h3>Guided check-ins</h3>
-              <p>Short prompts help you name what you need (space, support, time, or resources).</p>
-            </article>
-
-            <article class="card card--icon">
-              <div class="icon">🔒</div>
-              <h3>Privacy cues everywhere</h3>
-              <p>Consent and privacy are visible both at entry and during onboarding.</p>
-            </article>
-
-            <article class="card card--icon">
-              <div class="icon">🧠</div>
-              <h3>Anti-dependence design</h3>
-              <p>Reminders, time limits, and “return to real support” nudges reduce reliance risk.</p>
-            </article>
-
-            <article class="card card--icon">
-              <div class="icon">🚫</div>
-              <h3>Not therapy disclaimer</h3>
-              <p>Stated clearly and repeatedly: this is supportive technology, not clinical care.</p>
-            </article>
-
-            <article class="card card--icon">
-              <div class="icon">🏫</div>
-              <h3>Campus resources</h3>
-              <p>Quick links to counseling centers, crisis lines, and student support services.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- How it works -->
-      <section class="section section--alt" id="how">
-        <div class="container how">
-          <div class="sectionHead">
-            <h2>How it works</h2>
-            <p>Getting started should feel simple, predictable, and safe.</p>
-          </div>
-
-          <div class="how__grid">
-            <ol class="steps">
-              <li class="step">
-                <span class="step__num">01</span>
-                <div>
-                  <h3>Read the consent summary</h3>
-                  <p>We explain what the tool does, what it does not do, and how data is handled.</p>
-                </div>
-              </li>
-
-              <li class="step">
-                <span class="step__num">02</span>
-                <div>
-                  <h3>Choose your comfort level</h3>
-                  <p>Because most respondents were not open to voice replication, voice features are opt-in.</p>
-                </div>
-              </li>
-
-              <li class="step">
-                <span class="step__num">03</span>
-                <div>
-                  <h3>Talk, reflect, or get resources</h3>
-                  <p>Use the companion to vent, name feelings, and find next steps—without judgment.</p>
-                </div>
-              </li>
-
-              <li class="step">
-                <span class="step__num">04</span>
-                <div>
-                  <h3>Return to real support</h3>
-                  <p>We encourage reconnecting with people and professional resources when possible.</p>
-                </div>
-              </li>
-            </ol>
-
-            <div class="how__panel">
-              <div class="panel">
-                <div class="panel__title">What people told us</div>
-                <ul class="panel__list">
-                  <li><strong>Top concerns:</strong> emotional dependence, privacy misuse, insensitive replies.</li>
-                  <li><strong>Top trust signal:</strong> clear privacy and consent statement early.</li>
-                  <li><strong>Top preference:</strong> warm + trusting design, not “busy” or overwhelming.</li>
-                </ul>
-                <button class="btn btn--primary" type="button" data-open="waitlist">
-                  Join the waitlist
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQs -->
-      <section class="section" id="faq">
-        <div class="container">
-          <div class="sectionHead">
-            <h2>Common questions</h2>
-            <p>Short answers up front, with details if you want them.</p>
-          </div>
-
-          <div class="faq">
-            <details class="faqItem">
-              <summary>Is this a replacement for therapy or counseling?</summary>
-              <div class="faqBody">
-                No. Lantern is supportive technology, not therapy and not a substitute for professional care or human support.
-              </div>
-            </details>
-
-            <details class="faqItem" open>
-              <summary>How is my privacy protected?</summary>
-              <div class="faqBody">
-                We design for data minimization and clear consent. The site will explain what information is collected, why,
-                and how you can delete or opt out.
-              </div>
-            </details>
-
-            <details class="faqItem">
-              <summary>Does it really “understand” grief?</summary>
-              <div class="faqBody">
-                It cannot fully understand grief like a person can. It can offer reflective prompts and resources, and it should never pretend to be a human or your loved one.
-              </div>
-            </details>
-
-            <details class="faqItem">
-              <summary>What if I am in crisis?</summary>
-              <div class="faqBody">
-                If you are in immediate danger, call 911 (US) or your local emergency number. In the US, you can call or text 988 for the Suicide & Crisis Lifeline.
-              </div>
-            </details>
-
-            <details class="faqItem">
-              <summary>Will this use voice replication?</summary>
-              <div class="faqBody">
-                Because many people reported discomfort with voice replication, any voice features would be strictly opt-in, with explicit consent and clear boundaries.
-              </div>
-            </details>
-
-            <details class="faqItem">
-              <summary>How much does it cost?</summary>
-              <div class="faqBody">
-                This is a class project prototype. If we ever expand it, pricing (if any) would be disclosed clearly and never hidden behind dark patterns.
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer CTA -->
-      <section class="cta">
-        <div class="container cta__grid">
-          <div>
-            <h2>Ready to take the first step?</h2>
-            <p>
-              Join the waitlist to get updates on our prototype and to participate in future feedback rounds.
-            </p>
-            <button class="btn btn--invert" type="button" data-open="waitlist">
-              Join the waitlist
-            </button>
-            <p class="fineprint fineprint--light">
-              Reminder: Lantern is not therapy and does not replace emergency services.
-            </p>
-          </div>
-
-          <div class="cta__card">
-            <div class="cta__cardInner">
-              <div class="cta__badge">Safety</div>
-              <h3>Ground rules</h3>
-              <ul>
-                <li>Do not claim to be a loved one.</li>
-                <li>Do not encourage dependence.</li>
-                <li>Route crisis situations to real help.</li>
-                <li>Make consent and privacy unavoidable.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="container footer__grid">
-          <div>
-            <div class="brand brand--footer">
-              <span class="brand__mark" aria-hidden="true">✦</span>
-              <span class="brand__name">Lantern</span>
-            </div>
-            <p class="muted">
-              A supportive grief companion concept designed for college students.
-            </p>
-          </div>
-
-          <div class="footer__cols">
-            <div>
-              <h4>Resources</h4>
-              <a href="#trust">Trust & Safety</a>
-              <a href="#faq">Frequently asked questions</a>
-              <a href="#how">How it works</a>
-            </div>
-            <div>
-              <h4>Project</h4>
-              <a href="#features">Features</a>
-              <a href="#top" data-scroll="#top">Back to top</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-
-    <!-- Waitlist Modal -->
-    <div class="modal" data-modal="waitlist" aria-hidden="true">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle">
-        <div class="modal__head">
-          <h3 id="waitlistTitle">Join the waitlist</h3>
-          <button class="iconBtn" type="button" aria-label="Close" data-close>✕</button>
+    <div class="container hero-grid">
+      <section class="hero-copy">
+        <div class="pill">
+          Designed for college students • Supportive technology (not therapy)
         </div>
 
-        <p class="muted">
-          This saves locally for now (no backend). You can swap this later to a Google Form or email service.
+        <h1>You don’t have to grieve alone.</h1>
+
+        <p class="hero-sub">
+          Lantern is a supportive grief companion that listens, helps you reflect, and connects you to resources—
+          built around consent, boundaries, and crisis-safe guidance.
         </p>
 
-        <form id="waitlistForm" class="form">
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="name@school.edu" required />
-          </label>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+          <a class="btn btn-secondary" href="#features">Learn more</a>
+        </div>
 
-          <label class="check">
-            <input type="checkbox" name="consent" required />
-            <span>I understand this is not therapy and I can opt out anytime.</span>
-          </label>
+        <!-- Keep survey data subtle, not cluttered -->
+        <div class="trust-strip" role="note" aria-label="Key preferences from student feedback">
+          <div class="trust-item">
+            <span class="trust-k">91.7%</span>
+            <span class="trust-v">prefer consent & privacy shown both on landing and onboarding</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-k">100%</span>
+            <span class="trust-v">want “not therapy / not a person replacement” stated clearly</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-k">66.7%</span>
+            <span class="trust-v">are not open to voice replication right now</span>
+          </div>
+        </div>
+      </section>
 
-          <button class="btn btn--primary w100" type="submit">Submit</button>
-          <p class="form__msg" id="formMsg" aria-live="polite"></p>
-        </form>
+      <!-- Foreground image (you will add the file) -->
+      <aside class="hero-visual" aria-label="Illustration">
+        <div class="image-frame">
+          <!-- Put your image in the same folder and name it this: hero-foreground.png -->
+          <img src="hero-foreground.png" alt="A calm illustration representing supportive grief care" />
+        </div>
 
-        <div class="modal__foot">
-          <small class="muted">
-            Crisis reminder: If you are in immediate danger, call 911 (US) or your local emergency number. In the US, call or text 988.
-          </small>
+        <div class="floating-card" aria-hidden="true">
+          <div class="dot"></div>
+          <div>
+            <div class="floating-title">Always here for you</div>
+            <div class="floating-sub">Grounded, judgment-free support</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="chev">⌄</div>
+    </div>
+  </main>
+
+  <!-- “Why this exists” (simple, supportive tone) -->
+  <section class="section section-soft">
+    <div class="container section-narrow">
+      <h2 class="section-title">Built for the moments students told us about</h2>
+      <p class="section-lead">
+        In your responses, the most common needs were time, space, and someone to talk to—without pressure.
+        Lantern focuses on gentle reflection, clear boundaries, and early trust signals.
+      </p>
+
+      <div class="mini-cards">
+        <div class="mini-card">
+          <div class="mini-title">Warm, not clinical</div>
+          <div class="mini-text">Most respondents preferred a warm and comforting tone.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-title">Trust upfront</div>
+          <div class="mini-text">Privacy/consent and safety guidance show early and often.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-title">Voice is optional</div>
+          <div class="mini-text">Because many felt uncomfortable, voice replication is not the default.</div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Simple sticky “privacy” pill (optional; keeps page less busy than a full widget) -->
-    <button class="privacyPill" type="button" data-open="privacy">
-      Privacy & Consent
-    </button>
+  <!-- How it works -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Getting started stays simple and consent-led.</p>
+      </div>
 
-    <!-- Privacy Modal -->
-    <div class="modal" data-modal="privacy" aria-hidden="true">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
-        <div class="modal__head">
-          <h3 id="privacyTitle">Privacy & Consent (summary)</h3>
-          <button class="iconBtn" type="button" aria-label="Close" data-close>✕</button>
-        </div>
-
-        <div class="stack">
-          <div class="note">
-            <strong>Consent first:</strong> We will only enable sensitive features (like voice replication) with explicit, informed opt-in.
-          </div>
-          <div class="note">
-            <strong>Data minimization:</strong> Collect the minimum needed, explain why, and provide a clear deletion path.
-          </div>
-          <div class="note">
-            <strong>Boundaries:</strong> The companion must not claim to be a loved one or encourage dependence.
-          </div>
-          <div class="note">
-            <strong>Crisis:</strong> If a user indicates self-harm risk, the site routes to real help (988/911).
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Join the waitlist</div>
+            <div class="step-text">Sign up to get early access updates and a short onboarding guide.</div>
           </div>
         </div>
 
-        <div class="modal__foot">
-          <button class="btn btn--primary" type="button" data-close>Got it</button>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Set boundaries (onboarding)</div>
+            <div class="step-text">You choose what you want help with, and what you want to avoid.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Talk or type when you need it</div>
+            <div class="step-text">Use it as a place to vent, reflect, or plan your next small step.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-title">Get connected to human resources</div>
+            <div class="step-text">If you want, we point you to campus counseling and crisis support options.</div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <script>
-      // Smooth scroll for buttons + nav links
-      const scrollToTarget = (selector) => {
-        const el = document.querySelector(selector);
-        if (!el) return;
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      };
+  <!-- Features -->
+  <section id="features" class="section section-soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Features</h2>
+        <p>Designed around the top concerns: privacy, emotional dependence, and safety.</p>
+      </div>
 
-      document.querySelectorAll("[data-scroll]").forEach((btn) => {
-        btn.addEventListener("click", () => scrollToTarget(btn.getAttribute("data-scroll")));
-      });
+      <div class="cards">
+        <article class="card">
+          <div class="icon">💬</div>
+          <h3>Judgment-free space</h3>
+          <p>Express what you feel without worrying about “saying it wrong.”</p>
+        </article>
 
-      // Mobile menu
-      const menuBtn = document.querySelector("[data-menu]");
-      const mobile = document.querySelector("[data-mobile]");
-      const closeMobile = () => {
-        mobile.hidden = true;
-        menuBtn.setAttribute("aria-expanded", "false");
-      };
-      const openMobile = () => {
-        mobile.hidden = false;
-        menuBtn.setAttribute("aria-expanded", "true");
-      };
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>Privacy-first design</h3>
+          <p>We explain what is collected, why it matters, and what you control.</p>
+        </article>
 
-      if (menuBtn && mobile) {
-        menuBtn.addEventListener("click", () => {
-          const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-          expanded ? closeMobile() : openMobile();
-        });
-        mobile.querySelectorAll("[data-close]").forEach((a) => {
-          a.addEventListener("click", closeMobile);
-        });
-      }
+        <article class="card">
+          <div class="icon">🧭</div>
+          <h3>Guided reflection</h3>
+          <p>Gentle prompts that support processing—without pretending to be your loved one.</p>
+        </article>
 
-      // Modals
-      const openModal = (name) => {
-        const m = document.querySelector(`.modal[data-modal="${name}"]`);
-        if (!m) return;
-        m.classList.add("isOpen");
-        m.setAttribute("aria-hidden", "false");
-        document.body.classList.add("noScroll");
-      };
+        <article class="card">
+          <div class="icon">⛑️</div>
+          <h3>Crisis-safe guidance</h3>
+          <p>Clear “what to do next” steps if you feel unsafe or overwhelmed.</p>
+        </article>
 
-      const closeModal = (modalEl) => {
-        modalEl.classList.remove("isOpen");
-        modalEl.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("noScroll");
-      };
+        <article class="card">
+          <div class="icon">🎓</div>
+          <h3>Student-focused support</h3>
+          <p>Built for life transitions, distance from home support, and limited time.</p>
+        </article>
 
-      document.querySelectorAll("[data-open]").forEach((btn) => {
-        btn.addEventListener("click", () => openModal(btn.getAttribute("data-open")));
-      });
+        <article class="card">
+          <div class="icon">🔈</div>
+          <h3>Voice is optional</h3>
+          <p>Because many students are not open to voice replication, it is not the default.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      document.querySelectorAll(".modal").forEach((m) => {
-        m.querySelectorAll("[data-close]").forEach((btn) => {
-          btn.addEventListener("click", () => closeModal(m));
-        });
-      });
+  <!-- Trust & Safety (put early + clear) -->
+  <section id="safety" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Trust & safety</h2>
+        <p>Clear boundaries. Transparent consent. Supportive technology—never a replacement for people.</p>
+      </div>
 
-      // Waitlist form (local-only)
-      const form = document.getElementById("waitlistForm");
-      const msg = document.getElementById("formMsg");
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const data = new FormData(form);
-          const email = String(data.get("email") || "").trim();
-          const consent = data.get("consent") === "on";
-          if (!email || !consent) return;
+      <div class="safety-grid">
+        <div class="safety-left">
+          <div class="callout">
+            <h3>Important</h3>
+            <ul>
+              <li><strong>Lantern is supportive technology.</strong> It is not therapy or medical care.</li>
+              <li><strong>Lantern is not your loved one.</strong> It does not claim to be them.</li>
+              <li><strong>You control consent.</strong> We show privacy/consent on the landing page and again during onboarding.</li>
+              <li><strong>If you are in crisis,</strong> use the crisis resources below and seek immediate help.</li>
+            </ul>
+            <div class="callout-actions">
+              <a class="btn btn-secondary" href="#crisis">See crisis resources</a>
+              <a class="btn btn-ghost" href="#faq">Read FAQ</a>
+            </div>
+          </div>
+        </div>
 
-          const key = "lantern_waitlist";
-          const existing = JSON.parse(localStorage.getItem(key) || "[]");
-          existing.push({ email, ts: Date.now() });
-          localStorage.setItem(key, JSON.stringify(existing));
+        <div class="safety-right">
+          <div class="accordion" role="region" aria-label="Trust and safety details">
+            <button class="acc-item" type="button" aria-expanded="false">
+              <span>What data is collected?</span><span class="acc-caret">+</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                This landing page is a prototype. In the final product, we would clearly list what data is collected,
+                why it is needed, and what you can delete or opt out of.
+              </p>
+            </div>
 
-          msg.textContent = "Thanks — you’re on the list (saved locally).";
-          form.reset();
-        });
-      }
-    </script>
-  </body>
+            <button class="acc-item" type="button" aria-expanded="false">
+              <span>How do you prevent emotional dependence?</span><span class="acc-caret">+</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Lantern reinforces boundaries (for example, “I am a tool, not a person”), encourages breaks,
+                and promotes reaching out to trusted humans and campus support.
+              </p>
+            </div>
+
+            <button class="acc-item" type="button" aria-expanded="false">
+              <span>How do you reduce insensitive responses?</span><span class="acc-caret">+</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                The goal is supportive reflection, not “perfect” answers. Safety messaging, escalation guidance,
+                and human resources are built into the experience.
+              </p>
+            </div>
+
+            <button class="acc-item" type="button" aria-expanded="false">
+              <span>Where is consent shown?</span><span class="acc-caret">+</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                You will see a plain-language consent and privacy summary on the landing page,
+                and again during onboarding before any personalization features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="crisis" class="crisis">
+        <div class="crisis-badge">Crisis support</div>
+        <p class="crisis-text">
+          If you feel like you might hurt yourself or someone else, contact local emergency services now.
+          In the United States, you can call or text <strong>988</strong> for the Suicide & Crisis Lifeline.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="section section-gradient">
+    <div class="container waitlist">
+      <div class="waitlist-copy">
+        <h2>Join the waitlist</h2>
+        <p>
+          Get notified when the prototype is ready for feedback and usability walkthroughs.
+          Your input directly shapes the design.
+        </p>
+        <ul class="bullets">
+          <li>Student-led feedback cycles</li>
+          <li>Consent and safety-first onboarding</li>
+          <li>Warm, calm design tone</li>
+        </ul>
+      </div>
+
+      <form class="waitlist-form" onsubmit="return false;">
+        <label class="label" for="email">Email</label>
+        <div class="input-row">
+          <input id="email" name="email" type="email" placeholder="name@school.edu" autocomplete="email" required />
+          <button class="btn btn-primary" id="joinBtn" type="submit">Join</button>
+        </div>
+
+        <label class="checkbox">
+          <input id="consent" type="checkbox" required />
+          <span>I consent to be contacted about this class prototype.</span>
+        </label>
+
+        <p class="fineprint">
+          We will not sell or share your contact information. This is a class prototype waitlist.
+        </p>
+
+        <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container section-narrow">
+      <div class="section-head">
+        <h2>Frequently asked questions</h2>
+        <p>Short answers, clear boundaries.</p>
+      </div>
+
+      <div class="accordion" role="region" aria-label="FAQ">
+        <button class="acc-item" type="button" aria-expanded="false">
+          <span>Is this a replacement for therapy or counseling?</span><span class="acc-caret">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>No. Lantern is supportive technology and does not replace therapy, counseling, or human support.</p>
+        </div>
+
+        <button class="acc-item" type="button" aria-expanded="false">
+          <span>Does Lantern pretend to be my loved one?</span><span class="acc-caret">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>No. The design explicitly avoids claiming to be a real person and reinforces boundaries.</p>
+        </div>
+
+        <button class="acc-item" type="button" aria-expanded="false">
+          <span>What if I am in crisis?</span><span class="acc-caret">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>
+            If you are in immediate danger, contact local emergency services.
+            In the United States, call or text <strong>988</strong> for the Suicide & Crisis Lifeline.
+          </p>
+        </div>
+
+        <button class="acc-item" type="button" aria-expanded="false">
+          <span>Why focus on college students?</span><span class="acc-caret">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>
+            Students often navigate major life transitions away from home support, with limited time and high stress.
+            This project focuses on that unmet need while keeping safety and ethics central.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand brand-footer">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span class="brand-name">Lantern</span>
+        </div>
+        <div class="footer-note">
+          Student project prototype • Built from survey feedback • Safety-first messaging
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <a href="#safety">Trust & safety</a>
+        <a href="#waitlist">Waitlist</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
