@@ -4,105 +4,75 @@ const mobileNav = document.getElementById("mobileNav");
 
 if (navToggle && mobileNav) {
   navToggle.addEventListener("click", () => {
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!expanded));
-
-    if (expanded) {
-      mobileNav.style.display = "none";
-      mobileNav.setAttribute("aria-hidden", "true");
-    } else {
-      mobileNav.style.display = "block";
-      mobileNav.setAttribute("aria-hidden", "false");
-    }
+    const isOpen = mobileNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileNav.setAttribute("aria-hidden", String(!isOpen));
   });
 
-  // Close mobile nav when clicking a link
-  mobileNav.querySelectorAll("a").forEach((a) => {
+  // Close mobile nav after click
+  mobileNav.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
-      mobileNav.style.display = "none";
-      mobileNav.setAttribute("aria-hidden", "true");
+      mobileNav.classList.remove("open");
       navToggle.setAttribute("aria-expanded", "false");
+      mobileNav.setAttribute("aria-hidden", "true");
     });
   });
 }
 
-// Accordion behavior (works for both safety and FAQ accordions)
+// Accordion behavior (works for both safety + FAQ accordions)
 document.querySelectorAll(".accordion").forEach((acc) => {
   const items = acc.querySelectorAll(".acc-item");
   items.forEach((btn) => {
     btn.addEventListener("click", () => {
       const panel = btn.nextElementSibling;
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      const expanded = btn.getAttribute("aria-expanded") === "true";
 
-      // close others in this accordion
+      // close others within same accordion
       items.forEach((other) => {
-        other.setAttribute("aria-expanded", "false");
-        const otherPanel = other.nextElementSibling;
-        if (otherPanel && otherPanel.classList.contains("acc-panel")) {
-          otherPanel.style.display = "none";
+        if (other !== btn) {
+          other.setAttribute("aria-expanded", "false");
+          other.querySelector(".acc-caret").textContent = "+";
+          const otherPanel = other.nextElementSibling;
+          if (otherPanel) otherPanel.style.display = "none";
         }
-        const caret = other.querySelector(".acc-caret");
-        if (caret) caret.textContent = "+";
       });
 
-      // open selected if it was closed
-      if (!isOpen && panel && panel.classList.contains("acc-panel")) {
-        btn.setAttribute("aria-expanded", "true");
-        panel.style.display = "block";
-        const caret = btn.querySelector(".acc-caret");
-        if (caret) caret.textContent = "–";
-      }
+      btn.setAttribute("aria-expanded", String(!expanded));
+      btn.querySelector(".acc-caret").textContent = expanded ? "+" : "–";
+      if (panel) panel.style.display = expanded ? "none" : "block";
     });
   });
 });
 
-// Safety first button scroll
+// Safety first button -> scroll to safety section
 const openSafety = document.getElementById("openSafety");
 if (openSafety) {
   openSafety.addEventListener("click", () => {
-    const target = document.getElementById("safety");
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("safety")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 
-// Waitlist "Join" toast (prototype behavior)
+// Waitlist toast (prototype only)
 const joinBtn = document.getElementById("joinBtn");
 const toast = document.getElementById("toast");
+const email = document.getElementById("email");
+const consent = document.getElementById("consent");
 
-if (joinBtn && toast) {
+if (joinBtn && toast && email && consent) {
   joinBtn.addEventListener("click", () => {
-    const email = document.getElementById("email");
-    const consent = document.getElementById("consent");
-
-    if (!email || !consent) return;
-
-    if (!email.value || !email.checkValidity()) {
+    if (!email.checkValidity() || !consent.checked) {
       toast.style.display = "block";
-      toast.setAttribute("aria-hidden", "false");
-      toast.textContent = "Please enter a valid email.";
-      return;
-    }
-
-    if (!consent.checked) {
-      toast.style.display = "block";
-      toast.setAttribute("aria-hidden", "false");
-      toast.textContent = "Please check the consent box to continue.";
+      toast.textContent = "Please enter a valid email and check consent.";
+      toast.style.background = "rgba(239,68,68,.10)";
+      toast.style.borderColor = "rgba(239,68,68,.18)";
+      toast.style.color = "rgba(185,28,28,.92)";
       return;
     }
 
     toast.style.display = "block";
-    toast.setAttribute("aria-hidden", "false");
-    toast.textContent = "You’re on the waitlist (prototype). Thanks for helping shape the design!";
-
-    // Optional: clear fields
-    email.value = "";
-    consent.checked = false;
-
-    // Hide toast after a moment
-    window.setTimeout(() => {
-      toast.style.display = "none";
-      toast.setAttribute("aria-hidden", "true");
-      toast.textContent = "";
-    }, 3500);
+    toast.textContent = "Thanks! You’re on the waitlist (prototype).";
+    toast.style.background = "rgba(34,197,94,.10)";
+    toast.style.borderColor = "rgba(34,197,94,.18)";
+    toast.style.color = "rgba(21,128,61,.92)";
   });
 }
