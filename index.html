@@ -1,15 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+<<<<<<< HEAD
   <title>Lantern — Voice grief companion for students</title>
   <meta name="description" content="Lantern is a voice chatbot for grief healing that can respond in a loved one’s voice (with consent), built around privacy, boundaries, and crisis-safe guidance." />
+=======
+  <title>Lantern — A gentle grief companion for students</title>
+  <meta
+    name="description"
+    content="Lantern is a gentle grief companion for college students, designed around remembrance, reflection, consent, and crisis-safe support."
+  />
+>>>>>>> 2001df4 (Changes made based on final survey)
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top bar -->
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="Lantern home">
@@ -20,11 +27,16 @@
       <nav class="nav" aria-label="Primary">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
+        <a href="#preference">Options</a>
+        <a href="#resources">Resources</a>
         <a href="#safety">Trust & safety</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="topbar-cta">
+        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle dark mode">
+          Dark mode
+        </button>
         <button class="btn btn-ghost" id="openSafety" type="button">Safety first</button>
         <a class="btn btn-primary" href="#waitlist">Join waitlist</a>
       </div>
@@ -37,22 +49,27 @@
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
+      <a href="#preference">Options</a>
+      <a href="#resources">Resources</a>
       <a href="#safety">Trust & safety</a>
       <a href="#faq">FAQ</a>
+      <button class="btn btn-ghost mobile-inline-btn" id="themeToggleMobile" type="button">Dark mode</button>
       <a class="btn btn-primary mobile-nav-btn" href="#waitlist">Join waitlist</a>
     </div>
   </header>
 
-  <!-- Hero (simple, not busy) -->
   <main id="top" class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-orb orb-one" aria-hidden="true"></div>
+    <div class="hero-orb orb-two" aria-hidden="true"></div>
 
     <div class="container hero-grid">
       <section class="hero-copy">
         <div class="pill">
-          Designed for college students • Supportive technology (not therapy)
+          For college students • Built with consent and emotional safety
         </div>
 
+<<<<<<< HEAD
         <h1>Comfort in their voice. Light in your grief.</h1>
 
         <p class="hero-sub">
@@ -60,25 +77,55 @@
           but helps you reconnect with the warmth, encouragement, and advice you miss hearing. Built with consent, boundaries, and crisis-safe guidance, 
           Lantern offers a private space for comfort, reflection, and continuing bonds.
 
+=======
+        <h1>Comfort in their memory. Light in your grief.</h1>
+
+        <p class="hero-sub">
+          Lantern is a gentle space for students to reflect, remember, and stay connected after loss.
+          It supports <strong>continuing bonds</strong> through writing, memory-keeping, and guided reflection.
+          It is <strong>not therapy</strong> and it does <strong>not pretend to be your loved one</strong>.
+>>>>>>> 2001df4 (Changes made based on final survey)
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
           <a class="btn btn-secondary" href="#features">Learn more</a>
         </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-chip">Private reflection</div>
+          <div class="highlight-chip">Clear boundaries</div>
+          <div class="highlight-chip">Campus support links</div>
+        </div>
       </section>
 
-      <!-- Foreground image -->
       <aside class="hero-visual" aria-label="Illustration">
         <div class="image-frame">
-          <img class="hero-img" src="hero-foreground.png" alt="A calm illustration representing supportive grief care" />
+          <img
+            class="hero-img"
+            src="hero-foreground.png"
+            alt="Warm illustration representing a student finding comfort, reflection, and support after loss"
+          />
         </div>
 
-        <div class="floating-card" aria-hidden="true">
-          <div class="dot"></div>
+        <div class="floating-card card-memory" aria-hidden="true">
+          <div class="card-icon">🕯️</div>
           <div>
+<<<<<<< HEAD
             <div class="floating-title">Voice-based support</div>
             <div class="floating-sub">Consent • boundaries • safety</div>
+=======
+            <div class="floating-title">A place to remember</div>
+            <div class="floating-sub">Letters • memories • reflection</div>
+          </div>
+        </div>
+
+        <div class="floating-card card-glow" aria-hidden="true">
+          <div class="card-icon">🎓</div>
+          <div>
+            <div class="floating-title">Made for student life</div>
+            <div class="floating-sub">Stress • distance • transitions</div>
+>>>>>>> 2001df4 (Changes made based on final survey)
           </div>
         </div>
       </aside>
@@ -90,18 +137,24 @@
     </div>
   </main>
 
-  <!-- “Why this exists” -->
   <section class="section section-soft">
     <div class="container section-narrow">
       <h2 class="section-title">A safe way to continue the bond</h2>
       <p class="section-lead">
+<<<<<<< HEAD
         Lantern focuses on a voice-first experience where you can hear a familiar voice for comfort and guidance,
         while keeping trust visible from the start. Students told us the most important early signals are
         <strong>privacy, consent, safety disclaimers, and clear “not therapy” boundaries</strong>.
+=======
+        Lantern helps students hold onto memories without crossing emotional boundaries.
+        It supports remembrance and meaning-making through simple, private tools designed to feel calm,
+        warm, and trustworthy from the first screen.
+>>>>>>> 2001df4 (Changes made based on final survey)
       </p>
 
       <div class="mini-cards">
         <div class="mini-card">
+<<<<<<< HEAD
           <div class="mini-title">Consent-first voice setup</div>
           <div class="mini-text">Voice use is opt-in, transparent, and gated behind clear consent and disclosure.</div>
         </div>
@@ -112,17 +165,31 @@
         <div class="mini-card">
           <div class="mini-title">Boundaries + safety</div>
           <div class="mini-text">Not therapy, not a person replacement, and crisis resources are always available.</div>
+=======
+          <div class="mini-icon">✍️</div>
+          <div class="mini-title">Write to them</div>
+          <div class="mini-text">A private place for words you wish you could say out loud.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🫶</div>
+          <div class="mini-title">Keep memories close</div>
+          <div class="mini-text">Save moments, reminders, and reflections that still matter to you.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🛡️</div>
+          <div class="mini-title">Clear boundaries</div>
+          <div class="mini-text">Lantern supports grief reflection without pretending to be a real person.</div>
+>>>>>>> 2001df4 (Changes made based on final survey)
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How it works -->
   <section id="how" class="section">
     <div class="container">
       <div class="section-head">
         <h2>How it works</h2>
-        <p>Getting started stays simple and consent-led.</p>
+        <p>Simple, calm, and consent-led from the start.</p>
       </div>
 
       <div class="steps">
@@ -130,47 +197,57 @@
           <div class="step-num">01</div>
           <div class="step-body">
             <div class="step-title">Join the waitlist</div>
-            <div class="step-text">Sign up to get early access updates and a short onboarding guide.</div>
+            <div class="step-text">Sign up to hear when the class prototype is ready for walkthroughs and feedback.</div>
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">02</div>
           <div class="step-body">
+<<<<<<< HEAD
             <div class="step-title">Consent-first onboarding</div>
             <div class="step-text">You review privacy and consent, then choose whether voice features are enabled.</div>
+=======
+            <div class="step-title">Set boundaries first</div>
+            <div class="step-text">You choose what to save, what to avoid, and what kind of support feels appropriate.</div>
+>>>>>>> 2001df4 (Changes made based on final survey)
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">03</div>
           <div class="step-body">
+<<<<<<< HEAD
             <div class="step-title">Start a voice conversation</div>
             <div class="step-text">Speak naturally and receive a response in a familiar voice, with clear boundaries and reminders.</div>
+=======
+            <div class="step-title">Reflect in your own way</div>
+            <div class="step-text">Write letters, revisit memories, and process difficult moments at your own pace.</div>
+>>>>>>> 2001df4 (Changes made based on final survey)
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">04</div>
           <div class="step-body">
-            <div class="step-title">Get connected to human resources</div>
-            <div class="step-text">If you want, we point you to campus counseling and crisis support options.</div>
+            <div class="step-title">Find real-world support</div>
+            <div class="step-text">When needed, Lantern points you toward campus counseling and crisis resources.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
   <section id="features" class="section section-soft">
     <div class="container">
       <div class="section-head">
         <h2>Features</h2>
-        <p>Designed around privacy, emotional safety, and clear boundaries.</p>
+        <p>Designed around emotional safety, privacy, and warmth.</p>
       </div>
 
       <div class="cards">
         <article class="card">
+<<<<<<< HEAD
           <div class="icon">🎙️</div>
           <h3>Voice conversations</h3>
           <p>Talk out loud and receive spoken responses designed for grief support and reflection.</p>
@@ -180,23 +257,46 @@
           <div class="icon">🧬</div>
           <h3>Consent-based loved-one voice</h3>
           <p>Voice model created from recordings you provide, with explicit consent and disclosures.</p>
+=======
+          <div class="icon">✍️</div>
+          <h3>Letters you keep</h3>
+          <p>Write what you miss, what you remember, or what you still wish you could say.</p>
+>>>>>>> 2001df4 (Changes made based on final survey)
+        </article>
+
+        <article class="card">
+          <div class="icon">📚</div>
+          <h3>Memory collection</h3>
+          <p>Keep stories, photos, and small reminders in one gentle, organized space.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧭</div>
+<<<<<<< HEAD
+          <h3>Guided coping prompts</h3>
+          <p>Gentle prompts for grounding, anniversaries, and difficult moments—without making clinical claims.</p>
+=======
+          <h3>Guided reflection</h3>
+          <p>Soft prompts help you reflect without creating the feeling of a false personhood.</p>
         </article>
 
         <article class="card">
           <div class="icon">🛡️</div>
           <h3>Privacy-first design</h3>
-          <p>We explain what is collected, why it matters, and what you control.</p>
+          <p>Clear explanations of what is collected, why it matters, and what you control.</p>
         </article>
 
         <article class="card">
-          <div class="icon">🧭</div>
-          <h3>Guided coping prompts</h3>
-          <p>Gentle prompts for grounding, anniversaries, and difficult moments—without making clinical claims.</p>
+          <div class="icon">🎓</div>
+          <h3>Student-centered</h3>
+          <p>Built around college life, stress, distance from home, and limited time.</p>
+>>>>>>> 2001df4 (Changes made based on final survey)
         </article>
 
         <article class="card">
           <div class="icon">⛑️</div>
           <h3>Crisis-safe guidance</h3>
+<<<<<<< HEAD
           <p>Clear “what to do next” steps if you feel unsafe or overwhelmed.</p>
         </article>
 
@@ -204,23 +304,85 @@
           <div class="icon">🧱</div>
           <h3>Boundaries, clearly stated</h3>
           <p>Lantern is supportive tech, not therapy, and it does not claim your loved one is alive.</p>
+=======
+          <p>Support stays grounded by encouraging human help when someone feels overwhelmed or unsafe.</p>
+>>>>>>> 2001df4 (Changes made based on final survey)
         </article>
       </div>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Quotes section -->
   <section id="stories" class="section">
+=======
+  <section id="preference" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Choose what feels right</h2>
+        <p>People differ on how much presence feels comforting. Lantern should respect that.</p>
+      </div>
+
+      <div class="preference-grid">
+        <article class="pref-card pref-selected">
+          <div class="pref-badge">Lower intensity</div>
+          <h3>Voice + chatbot only</h3>
+          <p>
+            For users who want comfort through voice, reflection, and memory without a visual likeness.
+            This can feel gentler and less uncanny.
+          </p>
+          <ul>
+            <li>More private feeling</li>
+            <li>Less emotionally overwhelming</li>
+            <li>Keeps focus on reflection</li>
+          </ul>
+        </article>
+
+        <article class="pref-card">
+          <div class="pref-badge pref-badge-warm">Optional visual avatar</div>
+          <h3>Voice + gentle avatar</h3>
+          <p>
+            For users who feel more comfort when there is a visual presence. This would be optional,
+            clearly labeled, and boundary-aware.
+          </p>
+          <ul>
+            <li>User-controlled choice</li>
+            <li>Optional, not default</li>
+            <li>Ethically framed from the start</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="stories" class="section section-soft">
+>>>>>>> 2001df4 (Changes made based on final survey)
     <div class="container">
       <div class="section-head section-head-center">
-        <h2>Trust is built upfront</h2>
-        <p>What students told us mattered most: consent, privacy, and clear boundaries.</p>
+        <h2>What matters most</h2>
+        <p>Students told us trust, privacy, and warmth matter before anything else.</p>
       </div>
 
       <div class="quotes">
         <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
+<<<<<<< HEAD
           <p class="quote-text"><em>“If it uses someone’s voice, I need the consent and privacy details to be impossible to miss.”</em></p>
+=======
+          <p class="quote-text">
+            <em>“I want a private place to write to them. I don’t want it to ‘be’ them — I just want help staying connected.”</em>
+          </p>
+          <div class="quote-person">
+            <div class="quote-meta">continuing bonds + boundaries</div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-mark" aria-hidden="true">”</div>
+          <p class="quote-text">
+            <em>“I’m more willing to try it when it clearly explains what’s saved and what isn’t.”</em>
+          </p>
+>>>>>>> 2001df4 (Changes made based on final survey)
           <div class="quote-person">
             <div class="quote-meta">consent + privacy upfront</div>
           </div>
@@ -228,6 +390,7 @@
 
         <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
+<<<<<<< HEAD
           <p class="quote-text"><em>“I would only try it if it clearly says it is not therapy and does not replace a real person.”</em></p>
           <div class="quote-person">
             <div class="quote-meta">boundaries + “not therapy”</div>
@@ -237,15 +400,58 @@
         <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
           <p class="quote-text"><em>“If I’m overwhelmed, I want resources and next steps, not a chatbot that keeps me talking.”</em></p>
+=======
+          <p class="quote-text">
+            <em>“If I’m overwhelmed, I want the site to point me to real support instead of only keeping me in the app.”</em>
+          </p>
+>>>>>>> 2001df4 (Changes made based on final survey)
           <div class="quote-person">
-            <div class="quote-meta">safety + escalation guidance</div>
+            <div class="quote-meta">safety + human resources</div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Trust & Safety -->
+  <section id="resources" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Support resources</h2>
+        <p>Lantern should never stand in for real care. It should make support easier to find.</p>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-icon">🏫</div>
+          <h3>Campus counseling</h3>
+          <p>Link your prototype to your university counseling center, student health services, or grief support office.</p>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-icon">👥</div>
+          <h3>Support groups</h3>
+          <p>Include bereavement groups, student organizations, or peer spaces where students can talk to real people.</p>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-icon">📱</div>
+          <h3>Mobile-friendly access</h3>
+          <p>Keep these resources easy to reach on phones since many students will browse during stressful moments.</p>
+        </article>
+      </div>
+
+      <div class="resource-callout">
+        <h3>Suggested links for your final prototype</h3>
+        <div class="resource-links">
+          <a href="#" aria-label="Campus counseling placeholder">Campus Counseling Center</a>
+          <a href="#" aria-label="Student wellness placeholder">Student Wellness Services</a>
+          <a href="#" aria-label="Peer support placeholder">Peer Support Group</a>
+          <a href="#crisis" aria-label="Crisis resources">988 Crisis Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="safety" class="section">
     <div class="container">
       <div class="section-head">
@@ -258,11 +464,19 @@
           <div class="callout">
             <h3>Important</h3>
             <ul>
+<<<<<<< HEAD
               <li><strong>Lantern is a voice chatbot for grief support.</strong> It is not therapy or medical care.</li>
               <li><strong>Voice features are opt-in.</strong> A loved one’s voice model is only used with clear consent and disclosures.</li>
               <li><strong>Lantern does not claim your loved one is alive.</strong> It is a supportive simulation with boundaries.</li>
               <li><strong>You control consent.</strong> Privacy/consent are shown on the landing page and again during onboarding.</li>
               <li><strong>If you are in crisis,</strong> use the crisis resources below and seek immediate help.</li>
+=======
+              <li><strong>Lantern supports continuing bonds.</strong> It helps users remember and reflect after loss.</li>
+              <li><strong>Lantern is not your loved one.</strong> It does not claim to be them or speak as them.</li>
+              <li><strong>Lantern is not therapy.</strong> It is supportive technology, not medical or clinical care.</li>
+              <li><strong>Consent comes first.</strong> Privacy and boundaries should be visible before personalization.</li>
+              <li><strong>Human help stays central.</strong> If someone is in crisis, the site should direct them to real support.</li>
+>>>>>>> 2001df4 (Changes made based on final survey)
             </ul>
             <div class="callout-actions">
               <a class="btn btn-secondary" href="#crisis">See crisis resources</a>
@@ -278,8 +492,13 @@
             </button>
             <div class="acc-panel">
               <p>
+<<<<<<< HEAD
                 The voice feature is optional and requires explicit consent. Recordings you provide would be used to create a voice model
                 for spoken responses, with clear disclosure that it is a simulation and not the real person.
+=======
+                It means continuing the bond through remembrance, writing, reflection, and memory-keeping.
+                Lantern does not present itself as a living person or generate messages from a deceased loved one.
+>>>>>>> 2001df4 (Changes made based on final survey)
               </p>
             </div>
 
@@ -288,28 +507,28 @@
             </button>
             <div class="acc-panel">
               <p>
-                This landing page is a prototype. In the final product, we would clearly list what data is collected,
-                why it is needed, and what you can delete or opt out of.
+                This is a class prototype. In a full version, the product should clearly explain what data is saved,
+                why it is needed, and how users can edit or remove it.
               </p>
             </div>
 
             <button class="acc-item" type="button" aria-expanded="false">
-              <span>How do you prevent emotional dependence?</span><span class="acc-caret">+</span>
+              <span>How do you reduce emotional dependence?</span><span class="acc-caret">+</span>
             </button>
             <div class="acc-panel">
               <p>
-                Lantern reinforces boundaries (for example, “I am a tool, not a person”), encourages breaks,
-                and promotes reaching out to trusted humans and campus support.
+                By reinforcing boundaries, encouraging breaks, and directing users toward trusted humans,
+                counseling resources, and crisis support when needed.
               </p>
             </div>
 
             <button class="acc-item" type="button" aria-expanded="false">
-              <span>Where is consent shown?</span><span class="acc-caret">+</span>
+              <span>Why offer an avatar option at all?</span><span class="acc-caret">+</span>
             </button>
             <div class="acc-panel">
               <p>
-                You will see a plain-language consent and privacy summary on the landing page,
-                and again during onboarding before any personalization features.
+                Survey feedback showed that some users prefer only voice, while others feel more comfort from a visual presence.
+                Making it optional respects both preferences while keeping consent explicit.
               </p>
             </div>
           </div>
@@ -320,25 +539,23 @@
         <div class="crisis-badge">Crisis support</div>
         <p class="crisis-text">
           If you feel like you might hurt yourself or someone else, contact local emergency services now.
-          In the United States, you can call or text <strong>988</strong> for the Suicide & Crisis Lifeline.
+          In the United States, call or text <strong>988</strong> for the Suicide & Crisis Lifeline.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Waitlist -->
   <section id="waitlist" class="section section-gradient">
     <div class="container waitlist">
       <div class="waitlist-copy">
         <h2>Join the waitlist</h2>
         <p>
-          Get notified when the prototype is ready for feedback and usability walkthroughs.
-          Your input directly shapes the design.
+          Get notified when the prototype is ready for feedback, walkthroughs, and usability testing.
         </p>
         <ul class="bullets">
-          <li>Student-led feedback cycles</li>
+          <li>Warm, student-centered design</li>
           <li>Consent and safety-first onboarding</li>
-          <li>Warm, calm design tone</li>
+          <li>Feedback that shapes the final prototype</li>
         </ul>
       </div>
 
@@ -355,7 +572,7 @@
         </label>
 
         <p class="fineprint">
-          We will not sell or share your contact information. This is a class prototype waitlist.
+          We will not sell or share your contact information. This is a student project waitlist.
         </p>
 
         <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
@@ -363,7 +580,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="container section-narrow">
       <div class="section-head">
@@ -384,8 +600,13 @@
         </button>
         <div class="acc-panel">
           <p>
+<<<<<<< HEAD
             The intended design includes an optional voice feature that can use a consent-based voice model built from recordings you provide.
             The system would clearly disclose that it is a simulation and not the real person.
+=======
+            No. Lantern is designed for continuing bonds through memory, writing, and reflection.
+            It does not claim a loved one is alive or speaking back as themselves.
+>>>>>>> 2001df4 (Changes made based on final survey)
           </p>
         </div>
 
@@ -393,7 +614,20 @@
           <span>Does Lantern claim my loved one is alive?</span><span class="acc-caret">+</span>
         </button>
         <div class="acc-panel">
+<<<<<<< HEAD
           <p>No. Lantern does not claim your loved one is alive and does not present itself as a real person.</p>
+=======
+          <p>No. The design avoids impersonation and keeps emotional boundaries visible.</p>
+        </div>
+
+        <button class="acc-item" type="button" aria-expanded="false">
+          <span>Can I choose whether I want a visual avatar?</span><span class="acc-caret">+</span>
+        </button>
+        <div class="acc-panel">
+          <p>
+            Yes. Because comfort levels differ, a visual presence should be optional rather than forced.
+          </p>
+>>>>>>> 2001df4 (Changes made based on final survey)
         </div>
 
         <button class="acc-item" type="button" aria-expanded="false">
@@ -411,8 +645,8 @@
         </button>
         <div class="acc-panel">
           <p>
-            Students often navigate major life transitions away from home support, with limited time and high stress.
-            This project focuses on that unmet need while keeping safety and ethics central.
+            College students often experience grief during major life transitions while living away from home support,
+            balancing stress, and managing limited time.
           </p>
         </div>
       </div>
@@ -427,11 +661,12 @@
           <span class="brand-name">Lantern</span>
         </div>
         <div class="footer-note">
-          Student project prototype • Safety-first messaging
+          Student project prototype • Warm, safety-first grief support design
         </div>
       </div>
 
       <div class="footer-right">
+        <a href="#resources">Resources</a>
         <a href="#safety">Trust & safety</a>
         <a href="#waitlist">Waitlist</a>
         <a href="#top">Back to top</a>
