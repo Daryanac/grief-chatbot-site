@@ -69,7 +69,7 @@ if (joinBtn && toast && email && consent) {
     }
 
     toast.style.display = "block";
-    toast.textContent = "Thanks! You’re on the waitlist (prototype).";
+    toast.textContent = "Thanks! You’re on the waitlist.";
     toast.classList.remove("toast-error");
     toast.classList.add("toast-success");
   });
