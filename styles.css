@@ -332,21 +332,6 @@ input:focus-visible,
     0 0 34px rgba(240, 164, 58, 0.18);
 }
 
-.btn-research-hero {
-  color: #fff;
-  background: linear-gradient(90deg, rgba(109, 70, 219, 0.96) 0%, rgba(141, 71, 247, 1) 52%, rgba(240, 164, 58, 0.95) 100%);
-  box-shadow:
-    0 18px 36px rgba(141, 71, 247, 0.22),
-    0 0 34px rgba(240, 164, 58, 0.14);
-}
-
-.btn-research-hero:hover {
-  box-shadow:
-    0 20px 38px rgba(141, 71, 247, 0.24),
-    0 0 0 8px rgba(141, 71, 247, 0.06),
-    0 0 40px rgba(240, 164, 58, 0.18);
-}
-
 .btn-ghost,
 .btn-secondary {
   color: var(--heading);
@@ -688,57 +673,6 @@ html[data-theme="dark"] .pill {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 18px;
-}
-
-.research-visibility-callout {
-  margin-top: 18px;
-  padding: 18px 20px;
-  border-radius: 24px;
-  background:
-    linear-gradient(135deg, rgba(141, 71, 247, 0.08), rgba(240, 164, 58, 0.08)),
-    rgba(255, 255, 255, 0.34);
-  border: 1px solid rgba(141, 71, 247, 0.18);
-  box-shadow:
-    0 16px 34px rgba(141, 71, 247, 0.08),
-    0 0 34px rgba(240, 164, 58, 0.08);
-  max-width: 620px;
-}
-
-html[data-theme="dark"] .research-visibility-callout {
-  background:
-    linear-gradient(135deg, rgba(165, 116, 255, 0.1), rgba(242, 177, 78, 0.08)),
-    rgba(255, 255, 255, 0.03);
-  border-color: rgba(209, 191, 238, 0.16);
-}
-
-.research-callout-kicker {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(141, 71, 247, 0.12);
-  color: var(--heading);
-  font-size: 0.8rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.research-callout-text {
-  color: var(--heading);
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.research-callout-link {
-  display: inline-flex;
-  margin-top: 12px;
-  color: var(--purple);
-  font-weight: 800;
-}
-
-.research-callout-link:hover {
-  color: var(--purple-deep);
 }
 
 .hero-highlights {
@@ -1907,10 +1841,6 @@ html[data-theme="dark"] .research-report-hero {
 
   .timeline-dot {
     margin-top: 0;
-  }
-
-  .research-visibility-callout {
-    padding: 16px;
   }
 
   .research-report-block {
