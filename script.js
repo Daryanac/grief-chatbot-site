@@ -130,11 +130,7 @@ function toggleTheme() {
 }
 
 const savedTheme = localStorage.getItem("lantern-theme");
-if (savedTheme === "dark" || savedTheme === "light") {
-  applyTheme(savedTheme);
-} else {
-  applyTheme("light");
-}
+applyTheme(savedTheme === "dark" ? "dark" : "light");
 
 if (themeToggle) {
   themeToggle.addEventListener("click", toggleTheme);
