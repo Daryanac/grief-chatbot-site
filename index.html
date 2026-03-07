@@ -19,32 +19,28 @@
 </head>
 
 <body>
-  <header class="topbar" id="top">
+  <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="Lantern home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <path d="M12 2.75c.42 1.98 1.22 3.5 2.4 4.6 1.09 1.02 2.58 1.71 4.48 2.08-1.9.37-3.39 1.07-4.48 2.1-1.18 1.1-1.98 2.62-2.4 4.56-.42-1.94-1.22-3.46-2.4-4.56-1.09-1.03-2.58-1.73-4.48-2.1 1.9-.37 3.39-1.06 4.48-2.08 1.18-1.1 1.98-2.62 2.4-4.6Z"/>
-          </svg>
-        </span>
+        <span class="brand-mark" aria-hidden="true">✦</span>
         <span class="brand-name">Lantern</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
-        <a href="#experience">Experience</a>
+        <a href="#preference">Options</a>
         <a href="#resources">Resources</a>
         <a href="#safety">Trust &amp; safety</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="topbar-cta">
-        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle color mode">
+        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle dark mode">
           Dark mode
         </button>
         <button class="btn btn-ghost" id="openSafety" type="button">Safety first</button>
-        <a class="btn btn-primary btn-glow" href="#waitlist">Join waitlist</a>
+        <a class="btn btn-primary" href="#waitlist">Join waitlist</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -55,59 +51,48 @@
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <a href="#how">How it works</a>
       <a href="#features">Features</a>
-      <a href="#experience">Experience</a>
+      <a href="#preference">Options</a>
       <a href="#resources">Resources</a>
       <a href="#safety">Trust &amp; safety</a>
       <a href="#faq">FAQ</a>
       <button class="btn btn-ghost mobile-inline-btn" id="themeToggleMobile" type="button">Dark mode</button>
-      <a class="btn btn-primary mobile-nav-btn btn-glow" href="#waitlist">Join waitlist</a>
+      <a class="btn btn-primary mobile-nav-btn" href="#waitlist">Join waitlist</a>
     </div>
   </header>
 
-  <main class="hero">
+  <main id="top" class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-orb orb-one" aria-hidden="true"></div>
     <div class="hero-orb orb-two" aria-hidden="true"></div>
 
     <div class="container hero-grid">
-      <section class="hero-copy reveal">
+      <section class="hero-copy">
         <div class="pill">
-          Designed for college students • Built with consent and emotional safety
+          Designed for college students • Supportive technology with consent and emotional safety
         </div>
 
         <h1>Comfort in their voice. Light in your grief.</h1>
 
         <p class="hero-sub">
-          Lantern creates a gentle voice companion shaped by recordings, memories, and the qualities you
-          loved most. It is not here to replace someone you lost. It is here to help you reconnect with
-          the warmth, encouragement, and advice you miss hearing—through a private, thoughtful experience
-          designed around consent, boundaries, and crisis-safe guidance.
+          Lantern is a voice companion that helps you continue your bond with someone you have lost.
+          Built from voice recordings, memories, and the qualities you loved most, it creates a
+          space to hear a familiar voice again, talk through difficult moments, and receive comfort
+          or advice when you miss them most. Designed with consent, boundaries, and crisis-safe guidance.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary btn-glow" href="#waitlist">Join the waitlist</a>
-          <a class="btn btn-secondary" href="#features">Explore features</a>
+          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+          <a class="btn btn-secondary" href="#features">Learn more</a>
         </div>
 
         <div class="hero-highlights">
-          <div class="highlight-chip">Voice-based comfort</div>
-          <div class="highlight-chip">Memory-shaped responses</div>
-          <div class="highlight-chip">Campus support built in</div>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat-card">
-            <strong>Private by design</strong>
-            <span>Consent and boundaries stay visible from the start.</span>
-          </div>
-          <div class="stat-card">
-            <strong>Made for student life</strong>
-            <span>Late nights, transitions, stress, and distance from home.</span>
-          </div>
+          <div class="highlight-chip">Hear their voice again</div>
+          <div class="highlight-chip">Comfort and advice</div>
+          <div class="highlight-chip">Campus support links</div>
         </div>
       </section>
 
-      <aside class="hero-visual reveal" aria-label="Illustration">
+      <aside class="hero-visual" aria-label="Illustration">
         <div class="image-frame">
           <img
             class="hero-img"
@@ -116,62 +101,55 @@
           />
         </div>
 
-        <div class="floating-card card-memory">
-          <div class="card-dot" aria-hidden="true"></div>
+        <div class="floating-card card-memory" aria-hidden="true">
+          <div class="card-dot"></div>
           <div>
-            <div class="floating-title">Hear a familiar voice again</div>
-            <div class="floating-sub">Warmth, reflection, and reassurance</div>
+            <div class="floating-title">Hear their voice again</div>
+            <div class="floating-sub">Comfort • advice • connection</div>
           </div>
         </div>
 
-        <div class="floating-card card-glow">
-          <div class="card-dot card-dot-soft" aria-hidden="true"></div>
+        <div class="floating-card card-glow" aria-hidden="true">
+          <div class="card-dot card-dot-soft"></div>
           <div>
-            <div class="floating-title">Support that meets the moment</div>
-            <div class="floating-sub">Quiet, human-centered, student-safe</div>
+            <div class="floating-title">Made for student life</div>
+            <div class="floating-sub">Stress • distance • transitions</div>
           </div>
         </div>
       </aside>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
-      <span>Scroll to explore</span>
+      <span>Scroll</span>
       <div class="chev">⌄</div>
     </div>
   </main>
 
   <section class="section section-soft">
-    <div class="container section-narrow reveal">
+    <div class="container section-narrow">
       <h2 class="section-title">A gentle way to continue the bond</h2>
       <p class="section-lead">
-        Grief does not always need more noise. Sometimes it needs a quieter place to remember, reflect,
-        and hear something familiar. Lantern is designed to offer a steady, respectful experience that
-        feels warm without feeling overwhelming.
+        Lantern is designed for students who want to stay connected to a loved one after loss.
+        Through conversation, voice, and memory-based personalization, it offers a private space
+        for comfort, reflection, and guidance—while keeping consent and emotional safety visible
+        from the start.
       </p>
 
       <div class="mini-cards">
-        <div class="mini-card hover-lift">
-          <div class="mini-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16h-6.3L7 19.7c-.48.4-1.2.07-1.2-.56V16.9A2.5 2.5 0 0 1 4 14.5v-8Z"/></svg>
-          </div>
-          <div class="mini-title">Talk naturally</div>
-          <div class="mini-text">Open a conversation when you need comfort, reflection, or a familiar sense of presence.</div>
+        <div class="mini-card">
+          <div class="mini-icon"></div>
+          <div class="mini-title">Talk with them</div>
+          <div class="mini-text">Have conversations in the voice you miss most, whenever you need comfort or connection.</div>
         </div>
-
-        <div class="mini-card hover-lift">
-          <div class="mini-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V7A3.5 3.5 0 1 0 8.5 7v5a3.5 3.5 0 0 0 3.5 3.5Zm-6-3.5a.75.75 0 0 1 1.5 0 4.5 4.5 0 0 0 9 0 .75.75 0 0 1 1.5 0 6.01 6.01 0 0 1-5.25 5.96V20h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-2.04A6.01 6.01 0 0 1 6 12Z"/></svg>
-          </div>
+        <div class="mini-card">
+          <div class="mini-icon"></div>
           <div class="mini-title">Ask for advice</div>
-          <div class="mini-text">Revisit the kinds of encouragement, tone, and guidance that once helped you feel grounded.</div>
+          <div class="mini-text">Lantern can respond using remembered personality, stories, and the kind of guidance they used to give.</div>
         </div>
-
-        <div class="mini-card hover-lift">
-          <div class="mini-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.75 5v5.25c0 5.09 3.1 9.73 7.25 11.25 4.15-1.52 7.25-6.16 7.25-11.25V5L12 2.5Zm0 3.09 4.75 1.64v3.02c0 3.89-2.24 7.52-4.75 8.84-2.51-1.32-4.75-4.95-4.75-8.84V7.23L12 5.59Z"/></svg>
-          </div>
-          <div class="mini-title">Stay within your boundaries</div>
-          <div class="mini-text">Clear controls, emotional safety reminders, and support links help keep the experience grounded.</div>
+        <div class="mini-card">
+          <div class="mini-icon"></div>
+          <div class="mini-title">Consent + boundaries</div>
+          <div class="mini-text">Built around permission, privacy, and emotionally safe design for a sensitive experience.</div>
         </div>
       </div>
     </div>
@@ -179,41 +157,41 @@
 
   <section id="how" class="section">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>How it works</h2>
-        <p>Simple, guided, and respectful from the first step.</p>
+        <p>Simple, warm, and guided from the very beginning.</p>
       </div>
 
       <div class="steps">
-        <div class="step reveal hover-lift">
+        <div class="step">
           <div class="step-num">01</div>
           <div class="step-body">
-            <div class="step-title">Create a gentle starting point</div>
-            <div class="step-text">Begin with what feels manageable: a few memories, a few phrases, and the qualities that made them feel like them.</div>
+            <div class="step-title">Join the waitlist</div>
+            <div class="step-text">Sign up to hear when Lantern is ready for early access, updates, and future release information.</div>
           </div>
         </div>
 
-        <div class="step reveal hover-lift">
+        <div class="step">
           <div class="step-num">02</div>
           <div class="step-body">
-            <div class="step-title">Shape the voice companion</div>
-            <div class="step-text">Lantern uses recordings and memory-based personalization to create a familiar, respectful conversational experience.</div>
+            <div class="step-title">Build their voice profile</div>
+            <div class="step-text">Upload voice recordings, stories, and memories that help Lantern reflect how they sounded and spoke.</div>
           </div>
         </div>
 
-        <div class="step reveal hover-lift">
+        <div class="step">
           <div class="step-num">03</div>
           <div class="step-body">
-            <div class="step-title">Return when you need it</div>
-            <div class="step-text">Talk, listen, reflect, or ask for encouragement during the moments that feel especially quiet or heavy.</div>
+            <div class="step-title">Start the conversation</div>
+            <div class="step-text">Talk with them, hear their voice again, and ask for comfort, reflection, or advice when you need it most.</div>
           </div>
         </div>
 
-        <div class="step reveal hover-lift">
+        <div class="step">
           <div class="step-num">04</div>
           <div class="step-body">
-            <div class="step-title">Keep support close</div>
-            <div class="step-text">Lantern keeps boundaries visible and makes campus or crisis support easy to reach when human help is needed.</div>
+            <div class="step-title">Stay supported</div>
+            <div class="step-text">Lantern keeps boundaries visible and makes campus or crisis resources easy to reach if the experience becomes overwhelming.</div>
           </div>
         </div>
       </div>
@@ -222,96 +200,84 @@
 
   <section id="features" class="section section-soft">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Features</h2>
-        <p>Designed around connection, clarity, and emotional safety.</p>
+        <p>Designed around connection, emotional safety, and clear consent.</p>
       </div>
 
       <div class="cards">
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V7A3.5 3.5 0 1 0 8.5 7v5a3.5 3.5 0 0 0 3.5 3.5Zm-6-3.5a.75.75 0 0 1 1.5 0 4.5 4.5 0 0 0 9 0 .75.75 0 0 1 1.5 0 6.01 6.01 0 0 1-5.25 5.96V20h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-2.04A6.01 6.01 0 0 1 6 12Z"/></svg>
-          </div>
+        <article class="card">
+          <div class="icon"></div>
           <h3>Voice recreation</h3>
-          <p>Hear a familiar voice again through a companion shaped by recordings, memories, and speaking style.</p>
+          <p>Hear a familiar voice again through a companion shaped by recordings, memories, and the way they spoke.</p>
         </article>
 
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16h-6.3L7 19.7c-.48.4-1.2.07-1.2-.56V16.9A2.5 2.5 0 0 1 4 14.5v-8Z"/></svg>
-          </div>
-          <h3>Natural conversation</h3>
-          <p>Speak freely, ask questions, or simply sit with a familiar voice when words are hard to find.</p>
+        <article class="card">
+          <div class="icon"></div>
+          <h3>Real conversation</h3>
+          <p>Talk naturally, ask questions, share updates, and return to the bond whenever you need connection.</p>
         </article>
 
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10.25C5 7.02 7.69 5 10.2 5c1.59 0 2.83.77 3.8 2.02C14.97 5.77 16.21 5 17.8 5 20.31 5 23 7.02 23 10.75 23 16.65 16 21 16 21h-4Z" transform="translate(-2 0)"/></svg>
-          </div>
+        <article class="card">
+          <div class="icon"></div>
           <h3>Comfort and advice</h3>
-          <p>Receive reassurance, encouragement, and the kind of familiar guidance you may miss most.</p>
+          <p>Receive reassurance, encouragement, and familiar-style guidance during hard moments.</p>
         </article>
 
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c4.97 0 9 3.58 9 8 0 2.2-1 4.2-2.63 5.64-.26.22-.4.56-.39.9l.05 2.4c.02.68-.7 1.11-1.28.77l-2.1-1.22a1.1 1.1 0 0 0-.82-.1c-.59.14-1.2.21-1.83.21-4.97 0-9-3.58-9-8s4.03-8 9-8Zm-3.2 8.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm3.2 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm3.2 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg>
-          </div>
-          <h3>Memory-shaped personalization</h3>
-          <p>Stories, phrases, values, and small details help make the experience feel more emotionally familiar.</p>
+        <article class="card">
+          <div class="icon"></div>
+          <h3>Memory-based personalization</h3>
+          <p>Shape the experience with stories, personality traits, phrases, and values that made them feel like them.</p>
         </article>
 
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.75 5v5.25c0 5.09 3.1 9.73 7.25 11.25 4.15-1.52 7.25-6.16 7.25-11.25V5L12 2.5Zm0 3.09 4.75 1.64v3.02c0 3.89-2.24 7.52-4.75 8.84-2.51-1.32-4.75-4.95-4.75-8.84V7.23L12 5.59Z"/></svg>
-          </div>
+        <article class="card">
+          <div class="icon"></div>
           <h3>Consent-first design</h3>
-          <p>Users can understand what is uploaded, what is generated, and what remains under their control.</p>
+          <p>Clear explanations of what is uploaded, what is generated, and what the user controls.</p>
         </article>
 
-        <article class="card reveal hover-lift">
-          <div class="icon-wrap">
-            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 3.5 19.5h17L12 4Zm0 4.02 4.21 7.48H7.79L12 8.02Zm-.75 2.73v2.88a.75.75 0 0 0 1.5 0v-2.88a.75.75 0 0 0-1.5 0Zm.75 6.88a1.02 1.02 0 1 0 0-2.04 1.02 1.02 0 0 0 0 2.04Z"/></svg>
-          </div>
+        <article class="card">
+          <div class="icon"></div>
           <h3>Crisis-safe guidance</h3>
-          <p>Lantern encourages breaks, emotional check-ins, and fast access to human support when needed.</p>
+          <p>Support stays grounded by encouraging breaks and pointing users toward human help when needed.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="experience" class="section">
+  <section id="preference" class="section">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Choose what feels right</h2>
-        <p>The experience should meet users where they are, not push them further than they want to go.</p>
+        <p>Some users may want only voice. Others may prefer an optional visual presence. Lantern should respect both.</p>
       </div>
 
       <div class="preference-grid">
-        <article class="pref-card pref-selected reveal hover-lift">
-          <div class="pref-badge">Gentler starting point</div>
-          <h3>Voice + conversation</h3>
+        <article class="pref-card pref-selected">
+          <div class="pref-badge">Lower intensity</div>
+          <h3>Voice + chatbot only</h3>
           <p>
-            For users who want the comfort of hearing and talking with their loved one without adding a visual likeness.
-            This can feel quieter, more private, and easier to return to.
+            For users who want the comfort of hearing and talking with their loved one without a visual likeness.
+            This can feel gentler, more private, and less uncanny.
           </p>
           <ul>
-            <li>Focus stays on voice and memory</li>
+            <li>Focus stays on the voice</li>
             <li>Lower emotional intensity</li>
-            <li>Simple, familiar, and private</li>
+            <li>Feels simpler and more private</li>
           </ul>
         </article>
 
-        <article class="pref-card reveal hover-lift">
-          <div class="pref-badge pref-badge-warm">Optional only</div>
-          <h3>Voice + gentle visual presence</h3>
+        <article class="pref-card">
+          <div class="pref-badge pref-badge-warm">Optional visual layer</div>
+          <h3>Voice + gentle avatar</h3>
           <p>
-            For users who feel more connected with a soft visual layer. This would stay optional, clearly explained,
-            and always under the user’s control.
+            For users who feel more connected when they can also see a familiar face. This would be optional,
+            user-controlled, and clearly explained before use.
           </p>
           <ul>
-            <li>Never forced</li>
-            <li>More immersive if desired</li>
-            <li>Boundaries remain explicit</li>
+            <li>Optional, never forced</li>
+            <li>More immersive presence</li>
+            <li>Consent and boundaries stay explicit</li>
           </ul>
         </article>
       </div>
@@ -320,39 +286,39 @@
 
   <section id="stories" class="section section-soft">
     <div class="container">
-      <div class="section-head section-head-center reveal">
+      <div class="section-head section-head-center">
         <h2>What matters most</h2>
-        <p>Warmth, trust, emotional clarity, and support that still feels grounded in real life.</p>
+        <p>Warmth, trust, emotional clarity, and the ability to stay connected without losing sight of real-world support.</p>
       </div>
 
       <div class="quotes">
-        <article class="quote-card reveal hover-lift">
+        <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
           <p class="quote-text">
-            A meaningful grief experience starts by feeling emotionally safe, not overstimulated.
+            <em>Hearing a familiar voice can make grief feel a little less distant in the moments when you need comfort most.</em>
           </p>
           <div class="quote-person">
-            <div class="quote-meta">warmth and pacing</div>
+            <div class="quote-meta">comfort through voice</div>
           </div>
         </article>
 
-        <article class="quote-card reveal hover-lift">
+        <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
           <p class="quote-text">
-            Clear language matters. The product should feel honest about what it is, while still offering comfort.
+            <em>Clear emotional framing helps the product feel trustworthy, gentle, and honest about what it is.</em>
           </p>
           <div class="quote-person">
-            <div class="quote-meta">clarity and trust</div>
+            <div class="quote-meta">clarity + trust</div>
           </div>
         </article>
 
-        <article class="quote-card reveal hover-lift">
+        <article class="quote-card">
           <div class="quote-mark" aria-hidden="true">”</div>
           <p class="quote-text">
-            Real support should never be hidden. Helpful campus and crisis links need to stay easy to reach.
+            <em>Support resources should stay visible so comfort does not come at the expense of human help.</em>
           </p>
           <div class="quote-person">
-            <div class="quote-meta">resources close by</div>
+            <div class="quote-meta">safety + support</div>
           </div>
         </article>
       </div>
@@ -361,38 +327,32 @@
 
   <section id="resources" class="section">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Support resources</h2>
-        <p>Lantern is meant to comfort and connect, while keeping human support close and easy to find.</p>
+        <p>Lantern is meant to comfort and connect—but real-world support should always stay easy to find.</p>
       </div>
 
       <div class="resource-grid">
-        <article class="resource-card reveal hover-lift">
-          <div class="resource-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.25h18v1.5H3v-1.5Zm2-2V8.72l7-4.03 7 4.03v9.53h-2V9.88l-5-2.88-5 2.88v8.37H5Zm4-5.5h6v5.5H9v-5.5Z"/></svg>
-          </div>
+        <article class="resource-card">
+          <div class="resource-icon"></div>
           <h3>Campus counseling</h3>
-          <p>Reach a university counseling center for therapy, urgent support, workshops, and student mental health services.</p>
+          <p>Connect to a university counseling center for therapy, urgent support, and student mental health services.</p>
         </article>
 
-        <article class="resource-card reveal hover-lift">
-          <div class="resource-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5 5 0 0 1 5 5c0 1.48-.64 2.8-1.65 3.72A6.98 6.98 0 0 1 19 19v1h-2v-1a5 5 0 1 0-10 0v1H5v-1a6.98 6.98 0 0 1 3.65-6.28A4.98 4.98 0 0 1 7 9a5 5 0 0 1 5-5Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-          </div>
-          <h3>Wellness and peer support</h3>
-          <p>Student wellness offices, workshops, and supportive communities can offer grounding alongside the product experience.</p>
+        <article class="resource-card">
+          <div class="resource-icon"></div>
+          <h3>Wellness support</h3>
+          <p>Student wellness offices and support communities can offer grounding alongside the Lantern experience.</p>
         </article>
 
-        <article class="resource-card reveal hover-lift">
-          <div class="resource-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.75 5v5.25c0 5.09 3.1 9.73 7.25 11.25 4.15-1.52 7.25-6.16 7.25-11.25V5L12 2.5Zm0 3.09 4.75 1.64v3.02c0 3.89-2.24 7.52-4.75 8.84-2.51-1.32-4.75-4.95-4.75-8.84V7.23L12 5.59Z"/></svg>
-          </div>
-          <h3>Crisis support</h3>
-          <p>If something feels overwhelming, crisis lines and emergency services need to stay one click away.</p>
+        <article class="resource-card">
+          <div class="resource-icon"></div>
+          <h3>Crisis help</h3>
+          <p>If something feels overwhelming, crisis lines and emergency services should stay one click away.</p>
         </article>
       </div>
 
-      <div class="resource-callout reveal">
+      <div class="resource-callout">
         <h3>Helpful links</h3>
         <div class="resource-links">
           <a href="https://counseling.uci.edu/" target="_blank" rel="noopener noreferrer">UCI Counseling Center</a>
@@ -406,21 +366,21 @@
 
   <section id="safety" class="section">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Trust &amp; safety</h2>
-        <p>Designed for connection, but grounded in consent, boundaries, and support when emotions feel too heavy.</p>
+        <p>Designed for connection, but grounded in consent, boundaries, and support when emotions become overwhelming.</p>
       </div>
 
       <div class="safety-grid">
-        <div class="safety-left reveal">
+        <div class="safety-left">
           <div class="callout">
             <h3>Important</h3>
             <ul>
-              <li><strong>Lantern supports continuing bonds.</strong> It offers a voice-based space for reflection, comfort, and connection after loss.</li>
-              <li><strong>Lantern is AI-generated.</strong> It is shaped by recordings, memories, and user input. It is not literally bringing someone back.</li>
-              <li><strong>Consent comes first.</strong> Users should understand what is uploaded, what is generated, and what they can edit or remove.</li>
-              <li><strong>Emotional pacing matters.</strong> Reminders, boundaries, and check-ins help keep the experience grounded.</li>
-              <li><strong>Real support stays visible.</strong> If the experience becomes overwhelming, Lantern should encourage breaks and point users toward human help.</li>
+              <li><strong>Lantern is designed for continuing bonds.</strong> It helps users stay connected through voice-based conversation after loss.</li>
+              <li><strong>Lantern is AI-generated.</strong> It is shaped by recordings, memories, and user input—it is not literally bringing someone back.</li>
+              <li><strong>User consent comes first.</strong> People should clearly understand what is uploaded, generated, and stored.</li>
+              <li><strong>Emotional safety matters.</strong> The experience includes boundaries, reminders, and accessible human support.</li>
+              <li><strong>If the experience becomes overwhelming,</strong> Lantern should encourage breaks and direct users toward real help.</li>
             </ul>
             <div class="callout-actions">
               <a class="btn btn-secondary" href="#crisis">See crisis resources</a>
@@ -429,15 +389,15 @@
           </div>
         </div>
 
-        <div class="safety-right reveal">
+        <div class="safety-right">
           <div class="accordion" role="region" aria-label="Trust and safety details">
             <button class="acc-item" type="button" aria-expanded="false">
               <span>What does “continuing the bond” mean here?</span><span class="acc-caret">+</span>
             </button>
             <div class="acc-panel">
               <p>
-                It means preserving a sense of connection after loss through reflection, conversation, and familiar emotional cues.
-                Lantern is intended to feel comforting while remaining honest that the experience is AI-generated.
+                It means using voice conversation to maintain a sense of connection after loss. Lantern is designed
+                to feel emotionally familiar and comforting while still being transparent that the experience is AI-generated.
               </p>
             </div>
 
@@ -446,17 +406,18 @@
             </button>
             <div class="acc-panel">
               <p>
-                The voice companion is shaped using recordings, stories, phrases, and personality details shared by the user.
-                The goal is emotional familiarity, not imitation without context.
+                The voice companion is shaped using recordings, memories, stories, and personality details shared by the user.
+                The goal is to capture familiarity, warmth, and recognizable guidance.
               </p>
             </div>
 
             <button class="acc-item" type="button" aria-expanded="false">
-              <span>What kinds of controls should users have?</span><span class="acc-caret">+</span>
+              <span>What data is collected?</span><span class="acc-caret">+</span>
             </button>
             <div class="acc-panel">
               <p>
-                Users should be able to review what they share, pause or limit the experience, and remove data when they no longer want it included.
+                Lantern should clearly explain what recordings, memories, and personalization data are collected,
+                why they are needed, and how users can edit or delete them.
               </p>
             </div>
 
@@ -465,14 +426,15 @@
             </button>
             <div class="acc-panel">
               <p>
-                By setting expectations clearly, keeping the experience user-controlled, encouraging breaks, and placing counseling and crisis resources within easy reach.
+                By making consent visible, keeping expectations clear, encouraging breaks, and providing access to campus
+                resources, counseling, and crisis support if the experience becomes too intense.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="crisis" class="crisis reveal">
+      <div id="crisis" class="crisis">
         <div class="crisis-badge">Crisis support</div>
         <p class="crisis-text">
           If you feel like you might hurt yourself or someone else, contact local emergency services now.
@@ -484,23 +446,23 @@
 
   <section id="waitlist" class="section section-gradient">
     <div class="container waitlist">
-      <div class="waitlist-copy reveal">
+      <div class="waitlist-copy">
         <h2>Join the waitlist</h2>
         <p>
-          Be the first to hear product updates, launch announcements, and opportunities to shape the experience.
+          Get notified about Lantern updates, early access opportunities, and future availability.
         </p>
         <ul class="bullets">
-          <li>Thoughtful, student-centered design</li>
+          <li>Warm, student-centered design</li>
           <li>Consent and safety-first onboarding</li>
           <li>Updates as Lantern continues to grow</li>
         </ul>
       </div>
 
-      <form class="waitlist-form reveal" id="waitlistForm" novalidate>
+      <form class="waitlist-form" id="waitlistForm" novalidate>
         <label class="label" for="email">Email</label>
         <div class="input-row">
           <input id="email" name="email" type="email" placeholder="name@school.edu" autocomplete="email" required />
-          <button class="btn btn-primary btn-glow" id="joinBtn" type="submit">Join</button>
+          <button class="btn btn-primary" id="joinBtn" type="submit">Join</button>
         </div>
 
         <label class="checkbox">
@@ -519,19 +481,19 @@
 
   <section id="faq" class="section">
     <div class="container section-narrow">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Frequently asked questions</h2>
         <p>Short answers, clear expectations.</p>
       </div>
 
-      <div class="accordion reveal" role="region" aria-label="FAQ">
+      <div class="accordion" role="region" aria-label="FAQ">
         <button class="acc-item" type="button" aria-expanded="false">
           <span>What is Lantern meant to do?</span><span class="acc-caret">+</span>
         </button>
         <div class="acc-panel">
           <p>
             Lantern is designed to help people continue their bond with a lost loved one through conversation,
-            comfort, and familiar-style guidance in their voice.
+            comfort, and familiar-style advice in their voice.
           </p>
         </div>
 
@@ -540,7 +502,8 @@
         </button>
         <div class="acc-panel">
           <p>
-            The experience is designed to feel conversational. You can speak, listen, reflect, and return to it over time in a way that feels manageable.
+            Yes. The experience is meant to feel conversational, allowing users to speak, listen, ask questions,
+            and return to the bond in an ongoing way.
           </p>
         </div>
 
@@ -549,26 +512,27 @@
         </button>
         <div class="acc-panel">
           <p>
-            Lantern is an AI-generated companion shaped by recordings, memories, and user input. It is intended to feel familiar and emotionally meaningful,
-            but it is not literally bringing someone back.
+            Lantern is an AI-generated companion shaped by voice recordings, memories, and user input.
+            It is designed to feel familiar and emotionally meaningful, but it is not literally bringing someone back.
           </p>
         </div>
 
         <button class="acc-item" type="button" aria-expanded="false">
-          <span>Can users choose how immersive it feels?</span><span class="acc-caret">+</span>
+          <span>Can I choose whether I want a visual avatar?</span><span class="acc-caret">+</span>
         </button>
         <div class="acc-panel">
           <p>
-            Yes. The experience should let users choose a gentler voice-only version or a richer experience if that feels right for them.
+            Yes. Some users may only want voice, while others may want a visual avatar too. The design should let users choose.
           </p>
         </div>
 
         <button class="acc-item" type="button" aria-expanded="false">
-          <span>What if someone is in crisis?</span><span class="acc-caret">+</span>
+          <span>What if I am in crisis?</span><span class="acc-caret">+</span>
         </button>
         <div class="acc-panel">
           <p>
-            If there is immediate danger, contact emergency services. In the United States, call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
+            If you are in immediate danger, contact local emergency services.
+            In the United States, call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
           </p>
         </div>
 
@@ -577,7 +541,8 @@
         </button>
         <div class="acc-panel">
           <p>
-            College students often experience grief during major life transitions while balancing distance from family, academic stress, and changing support systems.
+            College students often experience grief during major life transitions while balancing school,
+            distance from family, stress, and limited support.
           </p>
         </div>
       </div>
@@ -588,15 +553,11 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <div class="brand brand-footer">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-              <path d="M12 2.75c.42 1.98 1.22 3.5 2.4 4.6 1.09 1.02 2.58 1.71 4.48 2.08-1.9.37-3.39 1.07-4.48 2.1-1.18 1.1-1.98 2.62-2.4 4.56-.42-1.94-1.22-3.46-2.4-4.56-1.09-1.03-2.58-1.73-4.48-2.1 1.9-.37 3.39-1.06 4.48-2.08 1.18-1.1 1.98-2.62 2.4-4.6Z"/>
-            </svg>
-          </span>
+          <span class="brand-mark" aria-hidden="true">✦</span>
           <span class="brand-name">Lantern</span>
         </div>
         <div class="footer-note">
-          Thoughtful voice-based grief support, designed with care.
+          Voice-based grief support designed with warmth, consent, and care
         </div>
       </div>
 
