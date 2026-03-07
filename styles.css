@@ -1,599 +1,1173 @@
-<!-- index.html -->
-<!doctype html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lantern — Comfort in their voice. Light in your grief.</title>
-  <meta
-    name="description"
-    content="Lantern is a voice companion that helps students continue their bond with a lost loved one through conversation, comfort, and advice—built with consent, boundaries, and crisis-safe guidance."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+/* styles.css */
+:root {
+  --bg: #faf7f2;
+  --bg-soft: #fbf6f0;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --border: rgba(118, 96, 140, 0.14);
 
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="Lantern home">
-        <span class="brand-mark" aria-hidden="true">✦</span>
-        <span class="brand-name">Lantern</span>
-      </a>
+  --text: #2e2037;
+  --text-soft: #6c647a;
+  --heading: #26182f;
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#preference">Options</a>
-        <a href="#resources">Resources</a>
-        <a href="#safety">Trust &amp; safety</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+  --purple: #8d47f7;
+  --purple-deep: #6f3fe2;
+  --amber: #f0a43a;
 
-      <div class="topbar-cta">
-        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle dark mode">
-          Dark mode
-        </button>
-        <button class="btn btn-ghost" id="openSafety" type="button">Safety first</button>
-        <a class="btn btn-primary" href="#waitlist">Join waitlist</a>
-      </div>
+  --success: #1f9a63;
+  --error: #c94d4d;
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  --shadow: 0 20px 48px rgba(88, 54, 116, 0.1);
+  --shadow-soft: 0 10px 28px rgba(88, 54, 116, 0.07);
 
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#preference">Options</a>
-      <a href="#resources">Resources</a>
-      <a href="#safety">Trust &amp; safety</a>
-      <a href="#faq">FAQ</a>
-      <button class="btn btn-ghost mobile-inline-btn" id="themeToggleMobile" type="button">Dark mode</button>
-      <a class="btn btn-primary mobile-nav-btn" href="#waitlist">Join waitlist</a>
-    </div>
-  </header>
+  --max: 1360px;
+  --topbar-h: 88px;
+  --radius-lg: 24px;
+}
 
-  <main id="top" class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-orb orb-one" aria-hidden="true"></div>
-    <div class="hero-orb orb-two" aria-hidden="true"></div>
+html[data-theme="dark"] {
+  --bg: #16131f;
+  --bg-soft: #1d1828;
+  --surface: rgba(36, 31, 48, 0.82);
+  --surface-strong: rgba(44, 38, 57, 0.94);
+  --border: rgba(209, 191, 238, 0.12);
 
-    <div class="container hero-grid">
-      <section class="hero-copy">
-        <div class="pill">
-          For college students • Built with consent and emotional safety
-        </div>
+  --text: #efeaf7;
+  --text-soft: #c9c1d7;
+  --heading: #fff8fc;
 
-        <h1>Comfort in their voice. Light in your grief.</h1>
+  --purple: #a574ff;
+  --purple-deep: #8d57ff;
+  --amber: #f2b14e;
 
-        <p class="hero-sub">
-          Lantern is a voice companion that helps you continue your bond with someone you have lost.
-          Built from voice recordings, memories, and the qualities you loved most, it gives you a
-          space to hear their voice again, talk with them, and receive comfort or advice in moments
-          when you miss them most. Designed with consent, boundaries, and crisis-safe guidance.
-        </p>
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.26);
+}
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
-          <a class="btn btn-secondary" href="#features">Learn more</a>
-        </div>
+* {
+  box-sizing: border-box;
+}
 
-        <div class="hero-highlights">
-          <div class="highlight-chip">Hear their voice again</div>
-          <div class="highlight-chip">Comfort and advice</div>
-          <div class="highlight-chip">Campus support links</div>
-        </div>
-      </section>
+html {
+  scroll-behavior: smooth;
+}
 
-      <aside class="hero-visual" aria-label="Illustration">
-        <div class="image-frame">
-          <img
-            class="hero-img"
-            src="griefimage.png"
-            alt="Warm illustration representing a student finding comfort by hearing the voice of a lost loved one again"
-          />
-        </div>
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  line-height: 1.55;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(242, 189, 110, 0.14), transparent 20%),
+    radial-gradient(circle at 82% 10%, rgba(187, 152, 245, 0.08), transparent 18%),
+    linear-gradient(180deg, #faf7f2 0%, #faf7f3 100%);
+}
 
-        <div class="floating-card card-memory" aria-hidden="true">
-          <div class="card-dot"></div>
-          <div>
-            <div class="floating-title">Hear their voice again</div>
-            <div class="floating-sub">Comfort • advice • connection</div>
-          </div>
-        </div>
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 10% 18%, rgba(242, 189, 110, 0.08), transparent 22%),
+    radial-gradient(circle at 82% 10%, rgba(165, 116, 255, 0.12), transparent 18%),
+    linear-gradient(180deg, #17131f 0%, #191521 100%);
+}
 
-        <div class="floating-card card-glow" aria-hidden="true">
-          <div class="card-dot card-dot-soft"></div>
-          <div>
-            <div class="floating-title">Made for student life</div>
-            <div class="floating-sub">Stress • distance • transitions</div>
-          </div>
-        </div>
-      </aside>
-    </div>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    <div class="scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="chev">⌄</div>
-    </div>
-  </main>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <section class="section section-soft">
-    <div class="container section-narrow">
-      <h2 class="section-title">A gentle way to continue the bond</h2>
-      <p class="section-lead">
-        Lantern is designed for students who want to stay connected to a loved one after loss.
-        Through conversation, voice, and memory-based personalization, it offers a private space
-        for comfort, reflection, and guidance—while keeping consent and emotional safety visible
-        from the start.
-      </p>
+button,
+input {
+  font: inherit;
+}
 
-      <div class="mini-cards">
-        <div class="mini-card">
-          <div class="mini-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 6.75A2.75 2.75 0 0 1 7.75 4h8.5A2.75 2.75 0 0 1 19 6.75v5.5A2.75 2.75 0 0 1 16.25 15H10.7l-3.94 3.15A.75.75 0 0 1 5.5 17.6V15A2.75 2.75 0 0 1 5 12.25v-5.5Z"/></svg>
-          </div>
-          <div class="mini-title">Talk with them</div>
-          <div class="mini-text">Have conversations in the voice you miss most, whenever you need comfort or connection.</div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V7a3.5 3.5 0 1 0-7 0v5a3.5 3.5 0 0 0 3.5 3.5Zm-5.25-3.5a.75.75 0 0 0-1.5 0 6.76 6.76 0 0 0 6 6.7V21h-2a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-2v-2.3a6.76 6.76 0 0 0 6-6.7.75.75 0 0 0-1.5 0 5.25 5.25 0 0 1-10.5 0Z"/></svg>
-          </div>
-          <div class="mini-title">Ask for advice</div>
-          <div class="mini-text">Lantern can respond using remembered personality, stories, and the kind of guidance they used to give.</div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2.75 4.75 5.5v5.6c0 5.03 3.05 9.64 7.25 11.15 4.2-1.51 7.25-6.12 7.25-11.15V5.5L12 2.75Zm0 2.96 5 1.9v3.49c0 3.93-2.28 7.63-5 8.95-2.72-1.32-5-5.02-5-8.95V7.61l5-1.9Z"/></svg>
-          </div>
-          <div class="mini-title">Consent + boundaries</div>
-          <div class="mini-text">Built around permission, privacy, and emotionally safe design for a sensitive experience.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
-  <section id="how" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>How it works</h2>
-        <p>Simple, warm, and guided from the very beginning.</p>
-      </div>
+.container {
+  width: min(calc(100% - 72px), 1340px);
+  margin: 0 auto;
+}
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <div class="step-title">Join the waitlist</div>
-            <div class="step-text">Sign up to hear when Lantern is ready for early access, updates, and future release information.</div>
-          </div>
-        </div>
+.section {
+  padding: 92px 0;
+}
 
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <div class="step-title">Build their voice profile</div>
-            <div class="step-text">Upload voice recordings, stories, and memories that help Lantern reflect how they sounded and spoke.</div>
-          </div>
-        </div>
+.section-soft {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.12)),
+    #faf6fb;
+}
 
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <div class="step-title">Start the conversation</div>
-            <div class="step-text">Talk with them, hear their voice again, and ask for comfort, reflection, or advice when you need it most.</div>
-          </div>
-        </div>
+html[data-theme="dark"] .section-soft {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+    #1c1726;
+}
 
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <div class="step-title">Stay supported</div>
-            <div class="step-text">Lantern keeps boundaries visible and makes campus or crisis resources easy to reach if the experience becomes overwhelming.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+.section-gradient {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(240, 164, 58, 0.11), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(141, 71, 247, 0.08), transparent 18%),
+    linear-gradient(180deg, #fbf7fb 0%, #f8f1fb 100%);
+}
 
-  <section id="features" class="section section-soft">
-    <div class="container">
-      <div class="section-head">
-        <h2>Features</h2>
-        <p>Designed around connection, emotional safety, and clear consent.</p>
-      </div>
+html[data-theme="dark"] .section-gradient {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(240, 164, 58, 0.07), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(141, 71, 247, 0.12), transparent 18%),
+    linear-gradient(180deg, #1d1828 0%, #191521 100%);
+}
 
-      <div class="cards">
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V7a3.5 3.5 0 1 0-7 0v5a3.5 3.5 0 0 0 3.5 3.5Zm-5.25-3.5a.75.75 0 0 0-1.5 0 6.76 6.76 0 0 0 6 6.7V21h-2a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 0-1.5h-2v-2.3a6.76 6.76 0 0 0 6-6.7.75.75 0 0 0-1.5 0 5.25 5.25 0 0 1-10.5 0Z"/></svg>
-          </div>
-          <h3>Voice recreation</h3>
-          <p>Hear a familiar voice again through a companion shaped by recordings, memories, and the way they spoke.</p>
-        </article>
+.section-narrow {
+  max-width: 860px;
+}
 
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 6.75A2.75 2.75 0 0 1 7.75 4h8.5A2.75 2.75 0 0 1 19 6.75v5.5A2.75 2.75 0 0 1 16.25 15H10.7l-3.94 3.15A.75.75 0 0 1 5.5 17.6V15A2.75 2.75 0 0 1 5 12.25v-5.5Z"/></svg>
-          </div>
-          <h3>Real conversation</h3>
-          <p>Talk naturally, ask questions, share updates, and return to the bond whenever you need connection.</p>
-        </article>
+.section-title,
+.section-head h2 {
+  margin: 0 0 12px;
+  color: var(--heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
 
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.14-7-10.07C5 7.4 7.64 5 10.48 5c1.5 0 2.75.68 3.52 1.76C14.77 5.68 16.02 5 17.52 5 20.36 5 23 7.4 23 10.93 23 16.86 16 21 16 21h-4Z" transform="translate(-2 0)"/></svg>
-          </div>
-          <h3>Comfort and advice</h3>
-          <p>Receive reassurance, encouragement, and familiar-style guidance during hard moments.</p>
-        </article>
+.section-lead,
+.section-head p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
 
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 4c4.97 0 9 3.36 9 7.5 0 1.98-.94 3.79-2.49 5.12-.25.21-.39.52-.38.85l.04 2.16a.9.9 0 0 1-1.35.8l-1.88-1.1a1.15 1.15 0 0 0-.83-.1c-.68.18-1.39.27-2.11.27-4.97 0-9-3.36-9-7.5S7.03 4 12 4Zm-3 7.6a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm3 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm3 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z"/></svg>
-          </div>
-          <h3>Memory-based personalization</h3>
-          <p>Shape the experience with stories, personality traits, phrases, and values that made them feel like them.</p>
-        </article>
+.section-head {
+  margin-bottom: 34px;
+}
 
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2.75 4.75 5.5v5.6c0 5.03 3.05 9.64 7.25 11.15 4.2-1.51 7.25-6.12 7.25-11.15V5.5L12 2.75Zm0 2.96 5 1.9v3.49c0 3.93-2.28 7.63-5 8.95-2.72-1.32-5-5.02-5-8.95V7.61l5-1.9Z"/></svg>
-          </div>
-          <h3>Consent-first design</h3>
-          <p>Clear explanations of what is uploaded, what is generated, and what the user controls.</p>
-        </article>
+.section-head-center {
+  text-align: center;
+}
 
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3.25 2.9 19a1 1 0 0 0 .87 1.5h16.46a1 1 0 0 0 .87-1.5L12 3.25Zm0 4.29 5.37 9.29H6.63L12 7.54Zm-.75 2.71v3.9a.75.75 0 0 0 1.5 0v-3.9a.75.75 0 0 0-1.5 0Zm.75 7.25a1.02 1.02 0 1 0 0-2.04 1.02 1.02 0 0 0 0 2.04Z"/></svg>
-          </div>
-          <h3>Crisis-safe guidance</h3>
-          <p>Support stays grounded by encouraging breaks and pointing users toward human help when needed.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+/* topbar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  background: rgba(250, 247, 242, 0.88);
+  border-bottom: 1px solid rgba(120, 100, 145, 0.12);
+}
 
-  <section id="preference" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Choose what feels right</h2>
-        <p>Some users may want only voice. Others may prefer an optional visual presence. Lantern should respect both.</p>
-      </div>
+html[data-theme="dark"] .topbar {
+  background: rgba(31, 26, 41, 0.9);
+  border-bottom-color: rgba(209, 191, 238, 0.1);
+}
 
-      <div class="preference-grid">
-        <article class="pref-card pref-selected">
-          <div class="pref-badge">Lower intensity</div>
-          <h3>Voice + chatbot only</h3>
-          <p>
-            For users who want the comfort of hearing and talking with their loved one without a visual likeness.
-            This can feel gentler, more private, and less uncanny.
-          </p>
-          <ul>
-            <li>Focus stays on the voice</li>
-            <li>Lower emotional intensity</li>
-            <li>Feels simpler and more private</li>
-          </ul>
-        </article>
+.topbar-inner {
+  min-height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-        <article class="pref-card">
-          <div class="pref-badge pref-badge-warm">Optional visual layer</div>
-          <h3>Voice + gentle avatar</h3>
-          <p>
-            For users who feel more connected when they can also see a familiar face. This would be optional,
-            user-controlled, and clearly explained before use.
-          </p>
-          <ul>
-            <li>Optional, never forced</li>
-            <li>More immersive presence</li>
-            <li>Consent and boundaries stay explicit</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  <section id="stories" class="section section-soft">
-    <div class="container">
-      <div class="section-head section-head-center">
-        <h2>What matters most</h2>
-        <p>Warmth, trust, emotional clarity, and the ability to stay connected without losing sight of real-world support.</p>
-      </div>
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f5ebff, #f8ebda);
+  border: 1px solid rgba(141, 71, 247, 0.14);
+  color: var(--heading);
+  font-size: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
 
-      <div class="quotes">
-        <article class="quote-card">
-          <div class="quote-mark" aria-hidden="true">”</div>
-          <p class="quote-text">
-            <em>Hearing a familiar voice can make grief feel a little less distant in the moments when you need comfort most.</em>
-          </p>
-          <div class="quote-person">
-            <div class="quote-meta">comfort through voice</div>
-          </div>
-        </article>
+html[data-theme="dark"] .brand-mark {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(242,177,78,0.12));
+  border-color: rgba(209, 191, 238, 0.14);
+}
 
-        <article class="quote-card">
-          <div class="quote-mark" aria-hidden="true">”</div>
-          <p class="quote-text">
-            <em>Clear emotional framing helps the product feel trustworthy, gentle, and honest about what it is.</em>
-          </p>
-          <div class="quote-person">
-            <div class="quote-meta">clarity + trust</div>
-          </div>
-        </article>
+.brand-name {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: var(--heading);
+  letter-spacing: -0.03em;
+}
 
-        <article class="quote-card">
-          <div class="quote-mark" aria-hidden="true">”</div>
-          <p class="quote-text">
-            <em>Support resources should stay visible so comfort does not come at the expense of human help.</em>
-          </p>
-          <div class="quote-person">
-            <div class="quote-meta">safety + support</div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
-  <section id="resources" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Support resources</h2>
-        <p>Lantern is meant to comfort and connect—but real-world support should always stay easy to find.</p>
-      </div>
+.nav a,
+.footer-right a {
+  color: var(--text-soft);
+  font-weight: 500;
+  transition: color 180ms ease;
+}
 
-      <div class="resource-grid">
-        <article class="resource-card">
-          <div class="resource-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 19.25h16v1.5H4v-1.5Zm2-1.5V8.44l6-3.19 6 3.19v9.31h-1.5V9.34L12 6.96 7.5 9.34v8.41H6Zm3-4.5h6v4.5H9v-4.5Z"/></svg>
-          </div>
-          <h3>Campus counseling</h3>
-          <p>Connect to a university counseling center for therapy, urgent support, and student mental health services.</p>
-        </article>
+.nav a:hover,
+.footer-right a:hover {
+  color: var(--heading);
+}
 
-        <article class="resource-card">
-          <div class="resource-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 4a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 10.5c4.42 0 8 2.13 8 4.75V20H4v-.75c0-2.62 3.58-4.75 8-4.75Z"/></svg>
-          </div>
-          <h3>Wellness support</h3>
-          <p>Student wellness offices and support communities can offer grounding alongside the Lantern experience.</p>
-        </article>
+.topbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-        <article class="resource-card">
-          <div class="resource-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3.25 2.9 19a1 1 0 0 0 .87 1.5h16.46a1 1 0 0 0 .87-1.5L12 3.25Zm0 4.29 5.37 9.29H6.63L12 7.54Zm-.75 2.71v3.9a.75.75 0 0 0 1.5 0v-3.9a.75.75 0 0 0-1.5 0Zm.75 7.25a1.02 1.02 0 1 0 0-2.04 1.02 1.02 0 0 0 0 2.04Z"/></svg>
-          </div>
-          <h3>Crisis help</h3>
-          <p>If something feels overwhelming, crisis lines and emergency services should stay one click away.</p>
-        </article>
-      </div>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease, color 180ms ease;
+}
 
-      <div class="resource-callout">
-        <h3>Helpful links</h3>
-        <div class="resource-links">
-          <a href="https://counseling.uci.edu/" target="_blank" rel="noopener noreferrer">UCI Counseling Center</a>
-          <a href="https://studentwellness.uci.edu/" target="_blank" rel="noopener noreferrer">UCI Center for Student Wellness</a>
-          <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">988 Suicide &amp; Crisis Lifeline</a>
-          <a href="https://www.dougy.org/" target="_blank" rel="noopener noreferrer">Dougy Center Grief Resources</a>
-        </div>
-      </div>
-    </div>
-  </section>
+.btn:hover {
+  transform: translateY(-1px);
+}
 
-  <section id="safety" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Trust &amp; safety</h2>
-        <p>Designed for connection, but grounded in consent, boundaries, and support when emotions become overwhelming.</p>
-      </div>
+.btn:focus-visible,
+input:focus-visible,
+.acc-item:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(141, 71, 247, 0.18);
+  outline-offset: 3px;
+}
 
-      <div class="safety-grid">
-        <div class="safety-left">
-          <div class="callout">
-            <h3>Important</h3>
-            <ul>
-              <li><strong>Lantern is designed for continuing bonds.</strong> It helps users stay connected through voice-based conversation after loss.</li>
-              <li><strong>Lantern is AI-generated.</strong> It is shaped by recordings, memories, and user input—it is not literally bringing someone back.</li>
-              <li><strong>User consent comes first.</strong> People should clearly understand what is uploaded, generated, and stored.</li>
-              <li><strong>Emotional safety matters.</strong> The experience includes boundaries, reminders, and accessible human support.</li>
-              <li><strong>If the experience becomes overwhelming,</strong> Lantern should encourage breaks and direct users toward real help.</li>
-            </ul>
-            <div class="callout-actions">
-              <a class="btn btn-secondary" href="#crisis">See crisis resources</a>
-              <a class="btn btn-ghost" href="#faq">Read FAQ</a>
-            </div>
-          </div>
-        </div>
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(90deg, var(--purple) 0%, #a452df 52%, var(--amber) 100%);
+  box-shadow: 0 14px 30px rgba(141, 71, 247, 0.18);
+}
 
-        <div class="safety-right">
-          <div class="accordion" role="region" aria-label="Trust and safety details">
-            <button class="acc-item" type="button" aria-expanded="false">
-              <span>What does “continuing the bond” mean here?</span><span class="acc-caret">+</span>
-            </button>
-            <div class="acc-panel">
-              <p>
-                It means using voice conversation to maintain a sense of connection after loss. Lantern is designed
-                to feel emotionally familiar and comforting while still being transparent that the experience is AI-generated.
-              </p>
-            </div>
+.btn-primary:hover {
+  box-shadow:
+    0 18px 36px rgba(141, 71, 247, 0.22),
+    0 0 0 8px rgba(141, 71, 247, 0.05);
+}
 
-            <button class="acc-item" type="button" aria-expanded="false">
-              <span>How is the voice created?</span><span class="acc-caret">+</span>
-            </button>
-            <div class="acc-panel">
-              <p>
-                The voice companion is shaped using recordings, memories, stories, and personality details shared by the user.
-                The goal is to capture familiarity, warmth, and recognizable guidance.
-              </p>
-            </div>
+.btn-ghost,
+.btn-secondary {
+  color: var(--heading);
+  background: transparent;
+  border: 1px solid rgba(118, 96, 140, 0.16);
+}
 
-            <button class="acc-item" type="button" aria-expanded="false">
-              <span>What data is collected?</span><span class="acc-caret">+</span>
-            </button>
-            <div class="acc-panel">
-              <p>
-                Lantern should clearly explain what recordings, memories, and personalization data are collected,
-                why they are needed, and how users can edit or delete them.
-              </p>
-            </div>
+html[data-theme="dark"] .btn-ghost,
+html[data-theme="dark"] .btn-secondary {
+  border-color: rgba(209, 191, 238, 0.14);
+  color: var(--heading);
+  background: rgba(255,255,255,0.02);
+}
 
-            <button class="acc-item" type="button" aria-expanded="false">
-              <span>How do you reduce emotional harm?</span><span class="acc-caret">+</span>
-            </button>
-            <div class="acc-panel">
-              <p>
-                By making consent visible, keeping expectations clear, encouraging breaks, and providing access to campus
-                resources, counseling, and crisis support if the experience becomes too intense.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+.btn-ghost:hover,
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: var(--shadow-soft);
+}
 
-      <div id="crisis" class="crisis">
-        <div class="crisis-badge">Crisis support</div>
-        <p class="crisis-text">
-          If you feel like you might hurt yourself or someone else, contact local emergency services now.
-          In the United States, call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
-        </p>
-      </div>
-    </div>
-  </section>
+html[data-theme="dark"] .btn-ghost:hover,
+html[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(255,255,255,0.06);
+}
 
-  <section id="waitlist" class="section section-gradient">
-    <div class="container waitlist">
-      <div class="waitlist-copy">
-        <h2>Join the waitlist</h2>
-        <p>
-          Get notified about Lantern updates, early access opportunities, and future availability.
-        </p>
-        <ul class="bullets">
-          <li>Warm, student-centered design</li>
-          <li>Consent and safety-first onboarding</li>
-          <li>Updates as Lantern continues to grow</li>
-        </ul>
-      </div>
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+}
 
-      <form class="waitlist-form" id="waitlistForm" novalidate>
-        <label class="label" for="email">Email</label>
-        <div class="input-row">
-          <input id="email" name="email" type="email" placeholder="name@school.edu" autocomplete="email" required />
-          <button class="btn btn-primary" id="joinBtn" type="submit">Join</button>
-        </div>
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px auto;
+  background: var(--heading);
+  border-radius: 2px;
+}
 
-        <label class="checkbox">
-          <input id="consent" type="checkbox" required />
-          <span>I consent to receive updates about Lantern.</span>
-        </label>
+.mobile-nav {
+  display: none;
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(250, 247, 242, 0.94);
+}
 
-        <p class="fineprint">
-          Your contact information stays private and is only used for Lantern updates.
-        </p>
+html[data-theme="dark"] .mobile-nav {
+  background: rgba(31, 26, 41, 0.96);
+}
 
-        <div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
-      </form>
-    </div>
-  </section>
+.mobile-nav.open {
+  display: grid;
+  gap: 10px;
+}
 
-  <section id="faq" class="section">
-    <div class="container section-narrow">
-      <div class="section-head">
-        <h2>Frequently asked questions</h2>
-        <p>Short answers, clear expectations.</p>
-      </div>
+.mobile-nav a,
+.mobile-inline-btn,
+.mobile-nav-btn {
+  width: 100%;
+}
 
-      <div class="accordion" role="region" aria-label="FAQ">
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>What is Lantern meant to do?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            Lantern is designed to help people continue their bond with a lost loved one through conversation,
-            comfort, and familiar-style advice in their voice.
-          </p>
-        </div>
+.mobile-nav a,
+.mobile-inline-btn {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+}
 
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>Can I really talk with them?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            Yes. The experience is meant to feel conversational, allowing users to speak, listen, ask questions,
-            and return to the bond in an ongoing way.
-          </p>
-        </div>
+/* hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 0 18px;
+  min-height: calc(100vh - var(--topbar-h));
+  display: flex;
+  align-items: flex-start;
+}
 
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>Is the voice actually them?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            Lantern is an AI-generated companion shaped by voice recordings, memories, and user input.
-            It is designed to feel familiar and emotionally meaningful, but it is not literally bringing someone back.
-          </p>
-        </div>
+.hero .container {
+  width: min(calc(100% - 88px), 1280px);
+}
 
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>Can I choose whether I want a visual avatar?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            Yes. Some users may only want voice, while others may want a visual avatar too. The design should let users choose.
-          </p>
-        </div>
+.hero-bg,
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
 
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>What if I am in crisis?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            If you are in immediate danger, contact local emergency services.
-            In the United States, call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
-          </p>
-        </div>
+.hero-bg {
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 12% 26%, rgba(242, 190, 110, 0.12), transparent 24%),
+    radial-gradient(ellipse at 80% 12%, rgba(184, 150, 245, 0.08), transparent 18%);
+}
 
-        <button class="acc-item" type="button" aria-expanded="false">
-          <span>Why focus on college students?</span><span class="acc-caret">+</span>
-        </button>
-        <div class="acc-panel">
-          <p>
-            College students often experience grief during major life transitions while balancing school,
-            distance from family, stress, and limited support.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+html[data-theme="dark"] .hero-bg {
+  background:
+    radial-gradient(ellipse at 12% 26%, rgba(242, 190, 110, 0.09), transparent 24%),
+    radial-gradient(ellipse at 80% 12%, rgba(184, 150, 245, 0.12), transparent 18%);
+}
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="brand brand-footer">
-          <span class="brand-mark" aria-hidden="true">✦</span>
-          <span class="brand-name">Lantern</span>
-        </div>
-        <div class="footer-note">
-          Voice-based grief support designed with warmth, consent, and care
-        </div>
-      </div>
+.hero-orb {
+  filter: blur(16px);
+  opacity: 0.5;
+}
 
-      <div class="footer-right">
-        <a href="#resources">Resources</a>
-        <a href="#safety">Trust &amp; safety</a>
-        <a href="#waitlist">Waitlist</a>
-        <a href="#top">Back to top</a>
-      </div>
-    </div>
-  </footer>
+.orb-one {
+  width: 240px;
+  height: 240px;
+  top: 115px;
+  left: -70px;
+  background: rgba(244, 208, 146, 0.16);
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.orb-two {
+  width: 270px;
+  height: 270px;
+  top: 10px;
+  right: -70px;
+  background: rgba(193, 160, 248, 0.1);
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.02fr 0.9fr;
+  gap: 54px;
+  align-items: start;
+  max-width: 1220px;
+  margin: 22px auto 0;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 40px;
+  max-width: 720px;
+  margin-left: 18px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(141, 71, 247, 0.12);
+  color: var(--text-soft);
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  width: fit-content;
+  max-width: 770px;
+}
+
+html[data-theme="dark"] .pill {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(209, 191, 238, 0.12);
+}
+
+.hero-copy h1 {
+  margin: 22px 0 16px;
+  max-width: 8.6ch;
+  color: var(--heading);
+  font-size: clamp(4rem, 6vw, 5.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.085em;
+}
+
+.hero-sub {
+  max-width: 700px;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.highlight-chip {
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-soft);
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+html[data-theme="dark"] .highlight-chip {
+  background: rgba(255,255,255,0.03);
+}
+
+.highlight-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(141, 71, 247, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 605px;
+  justify-self: center;
+  margin-top: 0;
+}
+
+.image-frame {
+  overflow: hidden;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 36px rgba(88, 54, 116, 0.07);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 290px;
+  padding: 15px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(120, 100, 150, 0.1);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+html[data-theme="dark"] .floating-card {
+  background: rgba(37, 32, 49, 0.9);
+  border-color: rgba(209, 191, 238, 0.12);
+}
+
+.card-glow {
+  left: 0;
+  top: 18px;
+}
+
+.card-memory {
+  right: 10px;
+  bottom: 6px;
+}
+
+.card-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f4c15d, #e79b26);
+  box-shadow: 0 0 0 8px rgba(240, 164, 58, 0.12);
+  flex-shrink: 0;
+}
+
+.card-dot-soft {
+  background: linear-gradient(135deg, #8d47f7, #b680ff);
+  box-shadow: 0 0 0 8px rgba(141, 71, 247, 0.09);
+}
+
+.floating-title {
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.floating-sub {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+}
+
+.scroll-hint {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  margin-top: 24px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.chev {
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(2px); }
+}
+
+/* cards */
+.mini-cards,
+.cards,
+.resource-grid,
+.quotes {
+  display: grid;
+  gap: 20px;
+}
+
+.mini-cards {
+  margin-top: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cards,
+.resource-grid,
+.quotes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mini-card,
+.card,
+.resource-card,
+.quote-card,
+.pref-card,
+.step,
+.callout,
+.waitlist-form,
+.resource-callout,
+.crisis {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+html[data-theme="dark"] .mini-card,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .resource-card,
+html[data-theme="dark"] .quote-card,
+html[data-theme="dark"] .pref-card,
+html[data-theme="dark"] .step,
+html[data-theme="dark"] .callout,
+html[data-theme="dark"] .waitlist-form,
+html[data-theme="dark"] .resource-callout,
+html[data-theme="dark"] .crisis {
+  background: rgba(255,255,255,0.03);
+}
+
+.mini-card,
+.card,
+.resource-card,
+.quote-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.mini-card:hover,
+.card:hover,
+.resource-card:hover,
+.quote-card:hover,
+.pref-card:hover,
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(141, 71, 247, 0.18);
+}
+
+.mini-icon,
+.icon,
+.resource-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(239, 229, 255, 0.95), rgba(248, 220, 174, 0.95));
+  border: 1px solid rgba(141, 71, 247, 0.12);
+  margin-bottom: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--heading);
+}
+
+html[data-theme="dark"] .mini-icon,
+html[data-theme="dark"] .icon,
+html[data-theme="dark"] .resource-icon {
+  background: linear-gradient(135deg, rgba(165,116,255,0.14), rgba(242,177,78,0.16));
+  border-color: rgba(209, 191, 238, 0.12);
+}
+
+.mini-icon svg,
+.icon svg,
+.resource-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.mini-title,
+.card h3,
+.resource-card h3,
+.pref-card h3,
+.callout h3,
+.resource-callout h3,
+.waitlist-copy h2 {
+  margin: 0 0 10px;
+  color: var(--heading);
+  letter-spacing: -0.03em;
+}
+
+.mini-title {
+  font-size: 1.06rem;
+  font-weight: 700;
+}
+
+.mini-text,
+.card p,
+.resource-card p,
+.pref-card p,
+.quote-text,
+.waitlist-copy p,
+.fineprint,
+.callout li,
+.callout p,
+.step-text {
+  color: var(--text-soft);
+}
+
+.step-title {
+  color: var(--heading);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.step {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.step-num {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(239, 229, 255, 1), rgba(255, 244, 222, 1));
+  border: 1px solid rgba(141, 71, 247, 0.12);
+  color: var(--heading);
+  font-weight: 800;
+}
+
+html[data-theme="dark"] .step-num {
+  background: linear-gradient(135deg, rgba(165,116,255,0.15), rgba(242,177,78,0.14));
+}
+
+.preference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pref-card {
+  padding: 28px;
+  border-radius: 28px;
+  transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.pref-selected {
+  border-color: rgba(141, 71, 247, 0.2);
+  box-shadow: 0 16px 34px rgba(141, 71, 247, 0.06);
+}
+
+.pref-badge {
+  display: inline-flex;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(141, 71, 247, 0.08);
+  color: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pref-badge-warm {
+  background: rgba(240, 164, 58, 0.12);
+}
+
+.pref-card ul,
+.callout ul,
+.bullets {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--text-soft);
+}
+
+.quote-card {
+  min-height: 220px;
+}
+
+.quote-mark {
+  color: var(--purple);
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.quote-text {
+  margin: 0;
+}
+
+.quote-person {
+  margin-top: 18px;
+}
+
+.quote-meta {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(141, 71, 247, 0.08);
+  color: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.resource-callout {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 26px;
+}
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.resource-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.34);
+  color: var(--heading);
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+html[data-theme="dark"] .resource-links a {
+  background: rgba(255,255,255,0.04);
+}
+
+.resource-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(141, 71, 247, 0.2);
+}
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.callout {
+  padding: 28px;
+  border-radius: 28px;
+}
+
+.callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+}
+
+.acc-item {
+  width: 100%;
+  min-height: 68px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.38);
+  color: var(--heading);
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+html[data-theme="dark"] .acc-item {
+  background: rgba(255,255,255,0.03);
+}
+
+.acc-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(141, 71, 247, 0.18);
+}
+
+.acc-caret {
+  color: var(--purple);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.acc-panel {
+  display: none;
+  padding: 0 8px 8px;
+}
+
+.acc-panel p {
+  margin: 0;
+  padding: 4px 14px 8px;
+  color: var(--text-soft);
+}
+
+.crisis {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.crisis-badge {
+  display: inline-flex;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: rgba(201, 77, 77, 0.1);
+  color: var(--heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.crisis-text {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.waitlist {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.waitlist-form {
+  padding: 28px;
+  border-radius: 28px;
+  transition: box-shadow 240ms ease, border-color 240ms ease, transform 200ms ease;
+}
+
+.waitlist-form.glow {
+  border-color: rgba(141, 71, 247, 0.22);
+  box-shadow:
+    0 18px 40px rgba(141, 71, 247, 0.15),
+    0 0 0 8px rgba(141, 71, 247, 0.05);
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+input[type="email"] {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--heading);
+}
+
+html[data-theme="dark"] input[type="email"] {
+  background: rgba(255,255,255,0.04);
+}
+
+input[type="email"]::placeholder {
+  color: color-mix(in srgb, var(--text-soft) 84%, transparent);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.checkbox input {
+  margin-top: 4px;
+  accent-color: var(--purple);
+}
+
+.fineprint {
+  margin-top: 12px;
+  font-size: 0.94rem;
+}
+
+.toast {
+  display: none;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-weight: 700;
+}
+
+.toast-success {
+  display: block;
+  color: #fff;
+  background: linear-gradient(135deg, var(--success), #24b673);
+}
+
+.toast-error {
+  display: block;
+  color: #fff;
+  background: linear-gradient(135deg, var(--error), #de6b6b);
+}
+
+.footer {
+  padding: 30px 0 42px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-note {
+  margin-top: 10px;
+  color: var(--text-soft);
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+@media (max-width: 1180px) {
+  .nav,
+  .topbar-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .hero .container {
+    width: min(calc(100% - 40px), 1340px);
+  }
+
+  .hero-grid,
+  .waitlist,
+  .safety-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-cards,
+  .cards,
+  .resource-grid,
+  .quotes,
+  .preference-grid,
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-copy {
+    padding-top: 12px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    max-width: 620px;
+    margin-top: 10px;
+  }
+
+  .floating-card {
+    position: static;
+    margin-top: 14px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 34px 0 26px;
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .hero-grid,
+  .mini-cards,
+  .cards,
+  .resource-grid,
+  .quotes,
+  .preference-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.8rem, 12vw, 4.4rem);
+  }
+
+  .hero-sub {
+    font-size: 1.04rem;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .input-row .btn {
+    width: 100%;
+  }
+
+  .resource-links {
+    flex-direction: column;
+  }
+
+  .resource-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
