@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lantern Voice Demo</title>
+  <meta
+    name="description"
+    content="A voice-enabled Lantern prototype that lets users speak with an AI grief-support companion."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+  <header class="demo-topbar">
+    <div class="container demo-topbar-inner">
+      <a class="brand" href="index.html" aria-label="Back to Lantern home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span class="brand-name">Lantern</span>
+      </a>
+      <a class="btn btn-ghost" href="index.html">Back to project</a>
+    </div>
+  </header>
+
+  <main class="demo-shell">
+    <section class="demo-intro">
+      <div class="pill">Working prototype • Voice + AI</div>
+      <h1>Talk with Lantern</h1>
+      <p>
+        This prototype demonstrates the voice conversation layer of Lantern. It does not imitate a deceased
+        person or recreate a specific person's identity. Speak naturally, and Lantern will transcribe your audio,
+        generate a supportive AI response, and speak the response back to you.
+      </p>
+    </section>
+
+    <section class="voice-card" aria-labelledby="voice-demo-heading">
+      <div class="voice-card-head">
+        <div>
+          <p class="eyebrow">Voice conversation</p>
+          <h2 id="voice-demo-heading">Press once to start. Press again to send.</h2>
+        </div>
+        <span id="connectionBadge" class="status-badge">Checking backend…</span>
+      </div>
+
+      <div class="conversation" id="conversation" aria-live="polite">
+        <article class="message assistant-message">
+          <div class="message-label">Lantern</div>
+          <p>Hi. I'm here to listen. What's on your mind today?</p>
+        </article>
+      </div>
+
+      <div class="voice-controls">
+        <button id="recordButton" class="record-button" type="button" aria-pressed="false">
+          <span class="record-icon" aria-hidden="true">●</span>
+          <span id="recordButtonText">Start talking</span>
+        </button>
+        <button id="clearButton" class="btn btn-ghost" type="button">Clear conversation</button>
+      </div>
+
+      <div class="voice-status-row">
+        <span id="voiceStatus">Ready when you are.</span>
+        <span id="timer" class="timer">00:00</span>
+      </div>
+
+      <div id="errorMessage" class="demo-error" role="alert" hidden></div>
+    </section>
+
+    <section class="demo-notice">
+      <h2>About this prototype</h2>
+      <p>
+        Lantern is an experimental portfolio project, not therapy, medical care, or an emergency service. If you
+        are in immediate danger or may hurt yourself or someone else, contact local emergency services or a crisis
+        service in your area and reach out to someone you trust nearby.
+      </p>
+    </section>
+  </main>
+
+  <script src="demo-config.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
