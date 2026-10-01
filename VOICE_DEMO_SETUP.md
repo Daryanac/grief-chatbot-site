@@ -32,21 +32,25 @@ From the `backend` folder with the virtual environment active:
 python app.py
 ```
 
-The backend should start at:
+The local backend starts at:
 
 ```text
-http://localhost:5000
+http://localhost:5050
 ```
 
-You can verify it by opening:
+Verify it by opening:
 
 ```text
-http://localhost:5000/health
+http://localhost:5050/api/health
 ```
 
-You should see a JSON response with `status: ok`.
+A configured local environment should return a JSON response containing:
 
-## 3. Serve the website locally
+```json
+{"status":"ok","apiConfigured":true}
+```
+
+## 3. Serve the frontend locally
 
 Open a second terminal in the repository root and run:
 
@@ -62,37 +66,57 @@ http://localhost:5500/demo.html
 
 Allow microphone access when your browser asks.
 
-## 4. Test the voice flow
+## 4. Test the interaction
+
+### Voice path
 
 1. Click **Start talking**.
 2. Speak for a few seconds.
 3. Click **Send recording**.
-4. The browser sends the recording to the Flask backend.
-5. The backend transcribes the audio, asks the AI for a response, converts that response to speech, and returns it to the browser.
-6. The transcript and response appear in the conversation panel, and the response audio plays automatically.
+4. The UI enters **Thinking** while the backend transcribes and generates a reply.
+5. The transcript and reply appear in the conversation panel.
+6. The UI enters **Speaking** while the generated audio plays.
+7. The interface returns to **Ready** for the next turn.
+
+### Text fallback
+
+Type a message into the text field and press **Send**. The same context, tone selection, AI response, and speech output are used without microphone capture.
+
+### Response styles
+
+The demo supports three styles:
+
+- **Gentle** — warm and reassuring
+- **Reflective** — thoughtful and exploratory
+- **Encouraging** — supportive and forward-looking
 
 ## Architecture
 
 ```text
-Browser microphone
-      ↓
-MediaRecorder
-      ↓
-Flask backend
-      ↓
-OpenAI speech transcription
-      ↓
-OpenAI text response
-      ↓
-OpenAI text-to-speech
-      ↓
-Browser playback
+Browser microphone or text input
+            ↓
+     JavaScript frontend
+            ↓
+        Flask REST API
+        ↙     ↓      ↘
+ speech-to-text  LLM  text-to-speech
+        ↘     ↓      ↙
+   transcript + response + audio
+            ↓
+        Browser playback
 ```
 
 The OpenAI API key exists only on the backend.
 
+## Graceful fallbacks
+
+- If microphone access is unavailable, users can type instead.
+- If generated speech audio fails, the browser's speech synthesis API can read the text response.
+- Backend status is shown directly in the demo.
+- The conversation can be cleared at any time.
+
 ## Current scope
 
-This prototype intentionally does **not** impersonate or recreate a deceased person's identity. It demonstrates the voice conversation layer first: microphone input, transcription, AI conversation, conversation context, and spoken output.
+This prototype intentionally does **not** impersonate or recreate a deceased person's identity. It demonstrates the voice conversation layer first: microphone input, transcription, AI conversation, recent context, selectable tone, and spoken output.
 
-A later phase can add user-controlled personalization, memory, and consent-based voice features after the core voice pipeline is stable.
+Future product exploration can add user-controlled memory or personalization only with explicit boundaries and clear controls.
