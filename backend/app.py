@@ -20,7 +20,8 @@ allowed_origins = [
     if origin.strip()
 ]
 
-CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
+# Allow the local demo and deployed GitHub Pages site to call the backend.
+CORS(app, resources={r"/*": {"origins": allowed_origins}})
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 TEXT_MODEL = os.getenv("OPENAI_TEXT_MODEL", "gpt-4.1-mini")
@@ -47,6 +48,7 @@ supportive rather than continuing normal conversation.
 
 
 @app.get("/health")
+@app.get("/api/health")
 def health():
     return jsonify({"status": "ok"})
 
