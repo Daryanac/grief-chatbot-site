@@ -115,10 +115,10 @@ def voice_chat():
             }
         )
 
-    except Exception as exc:
+    except Exception:
         app.logger.exception("Lantern voice request failed")
         return jsonify({"error": "The voice request failed. Check the backend logs and try again."}), 500
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5000")), debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5050")), debug=True)
