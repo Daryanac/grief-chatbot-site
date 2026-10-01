@@ -4,240 +4,187 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lantern — Research Impact</title>
-  <meta
-    name="description"
-    content="Research Impact report for Lantern, documenting how surveys and feedback shaped the final website design."
-  />
+  <meta name="description" content="Research documentation showing how survey findings, prototype feedback, and iterative design decisions shaped Lantern." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="research.css" />
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
+  <header class="site-header">
+    <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Lantern home">
         <span class="brand-mark" aria-hidden="true">✦</span>
         <span class="brand-name">Lantern</span>
       </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html#how">How it works</a>
-        <a href="index.html#features">Features</a>
-        <a href="research.html" class="nav-research-pill nav-research-active" aria-current="page">
-          <span class="nav-research-label">Research Impact</span>
-          <span class="nav-research-badge">Current page</span>
-        </a>
-        <a href="index.html#preference">Options</a>
-        <a href="index.html#resources">Resources</a>
-        <a href="index.html#safety">Trust &amp; safety</a>
-        <a href="index.html#faq">FAQ</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#product">Product</a>
+        <a href="index.html#architecture">Architecture</a>
+        <a href="index.html#safety">Safety</a>
+        <a href="research.html" aria-current="page">Research</a>
       </nav>
-
-      <div class="topbar-cta">
-        <button class="btn btn-ghost" id="themeToggle" type="button" aria-label="Toggle dark mode">
-          Dark mode
-        </button>
-        <a class="btn btn-primary" href="index.html">Back to main site</a>
+      <div class="header-actions">
+        <button class="icon-button desktop-only" type="button" data-theme-toggle aria-label="Switch theme">☾</button>
+        <a class="btn btn-primary" href="demo.html">Try live demo</a>
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
       </div>
-
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <a href="index.html#how">How it works</a>
-      <a href="index.html#features">Features</a>
-      <a href="research.html" class="mobile-research-link">Research Impact</a>
-      <a href="index.html#preference">Options</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="index.html#safety">Trust &amp; safety</a>
-      <a href="index.html#faq">FAQ</a>
-      <button class="btn btn-ghost mobile-inline-btn" id="themeToggleMobile" type="button">Dark mode</button>
-      <a class="btn btn-primary mobile-nav-btn" href="index.html">Back to main site</a>
-    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html#product">Product</a>
+      <a href="index.html#architecture">Architecture</a>
+      <a href="index.html#safety">Safety</a>
+      <a href="demo.html">Try live demo</a>
+      <button type="button" data-theme-toggle aria-label="Switch theme">☾</button>
+    </nav>
   </header>
 
-  <main class="section research-page">
-    <div class="container research-page-wrap">
-      <div class="section-head">
-        <div class="research-page-kicker">Research documentation</div>
-        <h1 class="research-page-title">Impact of Research on the Final Website</h1>
-        <p class="research-page-subtitle">
-          This page documents how survey findings, prototype testing, and instructor feedback
-          shaped the final Lantern website.
+  <main class="research-page">
+    <section class="container research-hero">
+      <div>
+        <div class="badge">Research documentation</div>
+        <h1>How research changed Lantern.</h1>
+        <p>
+          This report documents how three rounds of survey feedback, prototype testing, and critique changed the project’s tone,
+          trust language, navigation, visual direction, and product framing.
         </p>
       </div>
+      <div class="research-summary" aria-label="Research summary">
+        <div><strong>3 rounds</strong><span>Survey and prototype feedback</span></div>
+        <div><strong>77.8%</strong><span>Preferred Website #1 in Survey 3</span></div>
+        <div><strong>Iterative</strong><span>Research → critique → redesign</span></div>
+      </div>
+    </section>
 
-      <section class="research-report-block research-report-hero">
-        <div class="research-report-hero-top">
+    <section class="container">
+      <div class="scope-note">
+        <strong>Current prototype scope:</strong> the original research explored a more personalized remembrance concept, including voice and memory-based personalization. The working portfolio prototype now deliberately focuses on the safer, technically complete voice-conversation layer and does not impersonate a deceased person.
+      </div>
+
+      <div class="research-grid">
+        <aside class="research-nav" aria-label="Research report sections">
+          <span>Report sections</span>
+          <a href="#overview">Overview</a>
+          <a href="#survey1">Survey 1</a>
+          <a href="#early">Early draft</a>
+          <a href="#survey2">Survey 2</a>
+          <a href="#survey3">Survey 3</a>
+          <a href="#impact">Final impact</a>
+          <a href="#conclusion">Conclusion</a>
+        </aside>
+
+        <div class="research-content">
+          <section id="overview" class="report-section">
+            <div class="section-number">01 — Overview</div>
+            <h2>An iterative design process, not a one-pass aesthetic exercise.</h2>
+            <p>
+              The final Lantern website developed through multiple rounds of research, critique, and redesign. Survey 1 focused on audience perceptions of AI grief support and what users needed in order to trust such a platform. Survey 2 came after the preliminary website and helped identify weaknesses in that implementation. Survey 3 evaluated later website directions and directly informed the final prototype.
+            </p>
+            <p>
+              Across the stages, feedback consistently favored a site that felt warm, trustworthy, emotionally clear, and less corporate or artificial.
+            </p>
+          </section>
+
+          <section id="survey1" class="report-section">
+            <div class="section-number">02 — Survey 1</div>
+            <h2>Trust, safety, and tone became foundational requirements.</h2>
+            <p>
+              Early responses showed skepticism about an AI voice chatbot for grief. Participants associated the concept with discomfort, emotional distance, or a lack of authenticity, which meant the website needed to build trust immediately and explain itself carefully.
+            </p>
+            <div class="findings">
+              <div class="finding"><strong>Warmer tone</strong><span>Comforting language was preferred over a purely clinical voice.</span></div>
+              <div class="finding"><strong>Visible boundaries</strong><span>Safety disclaimers and consent/privacy information needed to appear early.</span></div>
+              <div class="finding"><strong>Clear positioning</strong><span>Users wanted explicit language that Lantern is supportive technology, not therapy or a real person.</span></div>
+            </div>
+            <p>
+              Major concerns included privacy and data misuse, emotional dependence, inaccurate or insensitive responses, and the lack of human empathy. These findings made trust and emotional safety central design priorities rather than secondary disclaimers.
+            </p>
+          </section>
+
+          <section id="early" class="report-section">
+            <div class="section-number">03 — Early draft</div>
+            <h2>The first implementation organized information but did not yet feel like a finished product.</h2>
+            <p>
+              The earliest website draft functioned more as a collection of survey findings and key information than as a polished experience. There was no formal wireframe or finalized design guide. The page included an early hero, safety disclaimers, product explanation, and interface ideas, but it primarily served to organize initial research.
+            </p>
+            <p>
+              Check-in feedback pushed the project toward greater focus and clarity. The product naming and hero messaging needed revision, and the website needed to communicate the core voice-chatbot concept more directly. That critique led to more direct homepage framing and a stronger emphasis on what the product actually does.
+            </p>
+          </section>
+
+          <section id="survey2" class="report-section">
+            <div class="section-number">04 — Survey 2</div>
+            <h2>The preliminary website needed to feel less artificial and more human-centered.</h2>
+            <p>
+              Participants responded positively to websites that felt simple, organized, welcoming, and less corporate. They also valued easy navigation, visible safety features, and clear layout structure.
+            </p>
+            <div class="findings">
+              <div class="finding"><strong>Reduce “AI-looking” visuals</strong><span>Artificial-looking artwork and generic layouts weakened trust.</span></div>
+              <div class="finding"><strong>Add warmth</strong><span>The early color scheme felt too white, cold, or sterile for grief support.</span></div>
+              <div class="finding"><strong>Improve clarity</strong><span>Users wanted less text density, better spacing, mobile friendliness, and clearer product explanation.</span></div>
+            </div>
+            <p>
+              The redesign responded with warmer amber and purple accents, more breathing room, clearer navigation, stronger emotional framing, and more visible safety transparency.
+            </p>
+          </section>
+
+          <section id="survey3" class="report-section">
+            <div class="section-number">05 — Survey 3</div>
+            <h2>The later prototype established the strongest visual and structural direction.</h2>
+            <div class="highlight-stat">
+              <strong>77.8%</strong>
+              <span>of Survey 3 respondents preferred Website #1, making it the clearest signal for the final prototype direction.</span>
+            </div>
+            <p>
+              Respondents liked the top navigation, welcoming and supportive feeling, emotional clarity of the headline, and ease of scrolling. Participants also responded positively to the purple palette and lantern imagery, describing the visuals as calming, readable, and more aligned with grief and comfort.
+            </p>
+            <p>
+              Remaining suggestions included making the main image look less obviously AI-generated, adding warmth through amber and purple accents, simplifying information, and keeping the experience mobile-friendly. The final direction preserved the stronger emotional hook and one-page navigation while strengthening trust-building sections and warmer visual cues.
+            </p>
+          </section>
+
+          <section id="impact" class="report-section">
+            <div class="section-number">06 — Final impact</div>
+            <h2>Research changed both the product framing and the presentation.</h2>
+            <p>
+              First, emotional trust and safety became non-negotiable. Instead of presenting Lantern only as an innovative AI concept, the site frames it as sensitive technology that requires boundaries, consent, and clear explanation. Second, the research shifted the visual direction away from a colder, more artificial appearance toward a softer and more human-centered interface. Third, users repeatedly asked to understand immediately what Lantern is, who it is for, and how it works, which led to clearer framing and navigation.
+            </p>
+            <p>
+              Survey 1 established emotional and ethical concerns, Survey 2 refined the preliminary implementation, and Survey 3 guided the final prototype selection and visual direction.
+            </p>
+          </section>
+
+          <section id="conclusion" class="research-conclusion">
+            <div class="section-number">07 — Conclusion</div>
+            <h2>The research made the project more appropriate for its emotional context.</h2>
+            <p>
+              User feedback repeatedly showed that an AI project involving grief must feel trustworthy, emotionally careful, and visually sincere. The resulting design emphasizes warmer tone, visible safety language, clearer product explanation, stronger navigation, and a more deliberate visual identity. The research did not simply improve how the website looks; it changed how the project communicates responsibility and user needs.
+            </p>
+          </section>
+
+          <div class="research-actions">
+            <a class="btn btn-primary" href="demo.html">Try the working demo</a>
+            <a class="btn btn-secondary" href="index.html">Back to project overview</a>
+          </div>
         </div>
-        <h2>Why this page matters</h2>
-        <p>
-          This research impact page shows that the Lantern website was developed iteratively through
-          user feedback, survey findings, and implementation revisions rather than aesthetic choice alone.
-          It highlights how research directly changed the site’s tone, trust language, navigation,
-          emotional framing, and visual design.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Overview</h2>
-        <p>
-          The final Lantern website was not designed in a single step. Instead, it developed through
-          multiple rounds of research, critique, and redesign. The process began with Survey 1, which
-          focused on audience perceptions of AI grief support and what users needed in order to trust
-          such a platform. Survey 2 was conducted after the preliminary website and, together with
-          check-in feedback, helped identify weaknesses in the first web implementation. Survey 3 then
-          evaluated later website directions and directly informed the final prototype. Across these
-          stages, the research consistently showed that users wanted the site to feel warm, trustworthy,
-          and emotionally clear rather than cold, corporate, or overly artificial.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Survey 1: Establishing Trust, Safety, and Tone</h2>
-        <p>
-          Survey 1 played an important role in shaping the foundation of the website. Responses showed
-          that participants were initially skeptical about the concept of an artificial intelligence
-          voice chatbot for grief healing. Many associated the idea with discomfort, emotional distance,
-          or a lack of authenticity. Because of that reaction, the website needed to build trust very
-          early and explain itself carefully.
-        </p>
-        <p>
-          The strongest findings from Survey 1 showed that users preferred a warm and comforting tone
-          over a purely clinical or professional one. Participants also emphasized that safety
-          disclaimers and privacy or consent information needed to be visible from the start. In
-          addition, respondents strongly agreed that the website should clearly state that Lantern is
-          supportive technology, not therapy and not a replacement for a real person. Major concerns
-          included privacy and data misuse, emotional dependence, inaccurate or insensitive responses,
-          and lack of human empathy.
-        </p>
-        <p>
-          These findings shaped the early direction of the final website by making trust and emotional
-          safety central design priorities. As a result, the website now includes visible trust and
-          safety language, clearer explanations of what Lantern is, and a warmer, more supportive tone
-          throughout the landing experience.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Early Draft and Implementation Notes</h2>
-        <p>
-          According to the implementation notes, the earliest website draft functioned more as a rough
-          collection of survey findings and key information than as a polished website. At that stage,
-          there was no formal wireframe or finalized design guide. The page included an early hero
-          section, safety disclaimers, product explanation, and interface ideas, but it was primarily
-          a way to organize the initial research rather than present a refined user experience.
-        </p>
-        <p>
-          Later feedback pushed the project toward greater focus and clarity. One important critique
-          from check-in feedback was that the product naming and hero messaging needed revision, and
-          that the website needed to more clearly communicate that Lantern is a voice chatbot built
-          around the voice of a lost loved one. This feedback led to more direct framing on the
-          homepage and a stronger emphasis on the actual function of the product.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Survey 2 and Preliminary Website Feedback</h2>
-        <p>
-          Survey 2 was conducted after the preliminary website and was especially useful in identifying
-          what still felt weak or unclear in the web design. Participants responded positively to
-          websites that felt simple, organized, welcoming, and less corporate. They also liked easy
-          navigation, visible safety features, and clear layout structure. However, the preliminary
-          version also received important criticism that directly influenced the redesign.
-        </p>
-        <p>
-          One of the strongest recurring themes in Survey 2 was that the website should avoid looking
-          too obviously AI-generated. Participants pointed to AI-looking artwork, overly artificial
-          visuals, and layouts that felt like “ChatGPT-designed” as negative features. Others noted
-          that the color scheme felt too cold, too white, or too sterile for a grief-support context.
-          Respondents recommended warmer colors, more human-feeling imagery, better spacing, reduced
-          text density, improved mobile friendliness, and more explicit explanation that Lantern is an
-          AI-driven voice chatbot rather than a general support resource.
-        </p>
-        <p>
-          These findings directly affected the final site. The later design uses warmer amber and
-          purple accents, reduces the cold minimalism of the preliminary draft, and gives more space
-          to emotional framing, safety transparency, and clearer navigation. The website also became
-          more explicit about what Lantern is and how it differs from other mental health or support
-          services.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Survey 3 and the Final Prototype</h2>
-        <p>
-          Survey 3 most directly shaped the final prototype. In this round, participants compared
-          later website options, and Website #1 was preferred by 77.8% of respondents. The comments
-          attached to this version provide some of the clearest evidence for why the final site moved
-          in its current direction.
-        </p>
-        <p>
-          Respondents said they liked the top navigation, the welcoming and supportive feeling, the
-          emotional clarity of the headline, and the overall ease of scrolling through the site.
-          Participants also responded positively to the purple color palette and the lantern imagery,
-          noting that the visuals felt calming, readable, and better aligned with grief and comfort.
-          At the same time, they still suggested improvements such as making the main image look less
-          obviously AI-generated, adding more warmth through amber and purple accents, simplifying some
-          information, and keeping the site friendly for mobile users.
-        </p>
-        <p>
-          These results had a direct effect on the final website. The chosen version preserved the
-          stronger emotional hook, maintained the lantern theme, and reinforced the purple identity,
-          while also incorporating warmer glow elements and stronger trust-building sections. Survey 3
-          also supported the continued use of top navigation and the one-page scrolling structure,
-          since users specifically described the site as easy to navigate and clear in purpose.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>How Research Changed the Final Website</h2>
-        <p>
-          Overall, the research changed both the content and the presentation of the final website.
-          First, it made emotional trust and safety non-negotiable. Instead of presenting Lantern as
-          only an innovative AI concept, the final site frames it as a sensitive tool that must be
-          introduced with boundaries, consent, and clear ethical explanation. Second, the research
-          changed the visual direction. Feedback consistently moved the design away from a colder,
-          more artificial appearance and toward a warmer, softer, and more human-centered interface.
-          Third, it improved content clarity. Users wanted to know immediately what Lantern is, who it
-          is for, and how it works, which led to a more direct headline, clearer feature framing, and
-          more visible support resources.
-        </p>
-        <p>
-          In this way, the final website is not simply a polished version of the first draft. It is a
-          version that reflects repeated user concerns, preferences, and recommendations across all
-          three research stages. Survey 1 established the emotional and ethical concerns, Survey 2
-          refined the preliminary implementation, and Survey 3 guided the final prototype selection
-          and visual direction.
-        </p>
-      </section>
-
-      <section class="research-report-block">
-        <h2>Conclusion</h2>
-        <p>
-          The final Lantern website was shaped by an iterative research process rather than aesthetic
-          preference alone. User feedback repeatedly showed that a grief-support platform involving AI
-          must feel trustworthy, emotionally careful, and visually sincere. Because of this, the final
-          design emphasizes warm tone, visible safety language, clearer explanation of the product,
-          stronger navigation, and a more comforting visual identity. The research did not just improve
-          the look of the website; it made the final version more appropriate for the emotional context
-          of grief support and more responsive to the needs of college students.
-        </p>
-      </section>
-
-      <div class="research-page-actions">
-        <a class="btn btn-primary" href="index.html">Back to main website</a>
       </div>
-    </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-name">Lantern</span></a>
+        <div class="footer-note">Research documentation for the Lantern full-stack AI portfolio project.</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Project</a>
+        <a href="demo.html">Live demo</a>
+        <a href="https://github.com/Daryanac/grief-chatbot-site" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
