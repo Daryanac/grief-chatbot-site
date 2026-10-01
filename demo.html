@@ -3,84 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lantern Voice Demo</title>
-  <meta
-    name="description"
-    content="A voice-enabled Lantern prototype that lets users speak with an AI grief-support companion."
-  />
+  <title>Lantern — Live Voice AI Demo</title>
+  <meta name="description" content="Try the working Lantern voice AI prototype with microphone input, selectable response tone, transcription, AI response generation, and spoken playback." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
   <link rel="stylesheet" href="demo.css" />
 </head>
 <body>
-  <header class="demo-topbar">
-    <div class="container demo-topbar-inner">
-      <a class="brand" href="index.html" aria-label="Back to Lantern home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Lantern home">
         <span class="brand-mark" aria-hidden="true">✦</span>
         <span class="brand-name">Lantern</span>
       </a>
-      <a class="btn btn-ghost" href="index.html">Back to project</a>
+      <div class="demo-header-actions">
+        <span class="prototype-label">Live prototype</span>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme">☾</button>
+        <a class="btn btn-secondary" href="index.html">Back to project</a>
+      </div>
     </div>
   </header>
 
-  <main class="demo-shell">
-    <section class="demo-intro">
-      <div class="pill">Working prototype • Voice + AI</div>
-      <h1>Talk with Lantern</h1>
-      <p>
-        This prototype demonstrates the voice conversation layer of Lantern. It does not imitate a deceased
-        person or recreate a specific person's identity. Speak naturally, and Lantern will transcribe your audio,
-        generate a supportive AI response, and speak the response back to you.
-      </p>
+  <main class="demo-page">
+    <section class="demo-hero container">
+      <div>
+        <div class="badge"><span class="live-dot"></span> Voice + AI working prototype</div>
+        <h1>Talk with Lantern.</h1>
+        <p>
+          Speak naturally or type a message. Lantern transcribes your voice, generates a supportive response using recent
+          context, and speaks the response back. This demo is intentionally a general AI companion and does not imitate a specific person.
+        </p>
+      </div>
+      <div class="demo-hero-meta">
+        <div><strong>3</strong><span>response styles</span></div>
+        <div><strong>2</strong><span>input modes</span></div>
+        <div><strong>1</strong><span>end-to-end flow</span></div>
+      </div>
     </section>
 
-    <section class="voice-card" aria-labelledby="voice-demo-heading">
-      <div class="voice-card-head">
-        <div>
-          <p class="eyebrow">Voice conversation</p>
-          <h2 id="voice-demo-heading">Press once to start. Press again to send.</h2>
+    <section class="container demo-layout" aria-label="Lantern interactive voice demo">
+      <div class="conversation-card">
+        <div class="conversation-head">
+          <div>
+            <div class="eyebrow">Conversation</div>
+            <h2>Voice session</h2>
+          </div>
+          <span id="connectionBadge" class="backend-badge">Checking backend…</span>
         </div>
-        <span id="connectionBadge" class="status-badge">Checking backend…</span>
+
+        <div class="conversation" id="conversation" aria-live="polite" aria-label="Conversation transcript">
+          <article class="message assistant-message">
+            <div class="message-avatar" aria-hidden="true">✦</div>
+            <div class="message-content">
+              <div class="message-label">Lantern</div>
+              <p>Hi. I’m here to listen. What’s on your mind today?</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="interaction-zone" id="interactionZone" data-state="idle">
+          <div class="state-visual" aria-hidden="true">
+            <div class="state-orb">
+              <span class="orb-mic">●</span>
+              <div class="thinking-ring"></div>
+            </div>
+            <div class="waveform" id="waveform">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="state-copy">
+            <div id="stateLabel" class="state-label">Ready</div>
+            <div id="voiceStatus" class="state-message">Press the microphone and start speaking.</div>
+          </div>
+
+          <button id="recordButton" class="mic-button" type="button" aria-pressed="false">
+            <span class="mic-icon" aria-hidden="true">●</span>
+            <span id="recordButtonText">Start talking</span>
+          </button>
+
+          <span id="timer" class="timer">00:00</span>
+        </div>
+
+        <form id="textForm" class="text-fallback" autocomplete="off">
+          <label for="textMessage">Prefer to type?</label>
+          <div class="text-row">
+            <input id="textMessage" name="message" type="text" maxlength="4000" placeholder="Type a message to Lantern…" />
+            <button id="sendTextButton" class="btn btn-primary" type="submit">Send</button>
+          </div>
+        </form>
+
+        <div class="conversation-actions">
+          <button id="clearButton" class="btn btn-quiet" type="button">Clear conversation</button>
+          <span class="privacy-note">Conversation history stays in this browser session.</span>
+        </div>
+
+        <div id="errorMessage" class="demo-error" role="alert" hidden></div>
       </div>
 
-      <div class="conversation" id="conversation" aria-live="polite">
-        <article class="message assistant-message">
-          <div class="message-label">Lantern</div>
-          <p>Hi. I'm here to listen. What's on your mind today?</p>
-        </article>
-      </div>
+      <aside class="demo-sidebar">
+        <section class="side-card">
+          <div class="side-kicker">Response style</div>
+          <h2>Choose the tone</h2>
+          <p>Change how Lantern phrases responses without changing its safety boundaries.</p>
+          <div class="tone-selector" id="toneSelector" role="radiogroup" aria-label="Response style">
+            <button class="tone-option selected" type="button" data-tone="gentle" role="radio" aria-checked="true">
+              <strong>Gentle</strong><span>Warm and reassuring</span>
+            </button>
+            <button class="tone-option" type="button" data-tone="reflective" role="radio" aria-checked="false">
+              <strong>Reflective</strong><span>Thoughtful and exploratory</span>
+            </button>
+            <button class="tone-option" type="button" data-tone="encouraging" role="radio" aria-checked="false">
+              <strong>Encouraging</strong><span>Supportive and forward-looking</span>
+            </button>
+          </div>
+        </section>
 
-      <div class="voice-controls">
-        <button id="recordButton" class="record-button" type="button" aria-pressed="false">
-          <span class="record-icon" aria-hidden="true">●</span>
-          <span id="recordButtonText">Start talking</span>
-        </button>
-        <button id="clearButton" class="btn btn-ghost" type="button">Clear conversation</button>
-      </div>
+        <section class="side-card flow-card">
+          <div class="side-kicker">Under the hood</div>
+          <h2>One turn, four steps</h2>
+          <ol class="mini-flow">
+            <li><span>1</span><div><strong>Capture</strong><small>Browser microphone</small></div></li>
+            <li><span>2</span><div><strong>Transcribe</strong><small>Speech to text</small></div></li>
+            <li><span>3</span><div><strong>Respond</strong><small>Context + LLM</small></div></li>
+            <li><span>4</span><div><strong>Speak</strong><small>Text to speech</small></div></li>
+          </ol>
+        </section>
 
-      <div class="voice-status-row">
-        <span id="voiceStatus">Ready when you are.</span>
-        <span id="timer" class="timer">00:00</span>
-      </div>
-
-      <div id="errorMessage" class="demo-error" role="alert" hidden></div>
+        <section class="side-card safety-card">
+          <div class="side-kicker">Important</div>
+          <h2>Experimental AI</h2>
+          <p>Lantern is not therapy, medical care, a crisis service, or a deceased loved one. It can make mistakes.</p>
+        </section>
+      </aside>
     </section>
 
-    <section class="demo-notice">
-      <h2>About this prototype</h2>
-      <p>
-        Lantern is an experimental portfolio project, not therapy, medical care, or an emergency service. If you
-        are in immediate danger or may hurt yourself or someone else, contact local emergency services or a crisis
-        service in your area and reach out to someone you trust nearby.
-      </p>
+    <section class="container technical-section">
+      <div class="technical-head">
+        <div>
+          <div class="eyebrow">Technical implementation</div>
+          <h2>Built as a full-stack voice pipeline.</h2>
+        </div>
+        <a class="btn btn-secondary" href="https://github.com/Daryanac/grief-chatbot-site" target="_blank" rel="noopener noreferrer">View repository</a>
+      </div>
+
+      <div class="technical-grid">
+        <article><span>Frontend</span><h3>JavaScript + Web Audio</h3><p>MediaRecorder captures speech, Web Audio drives the live waveform, and the UI manages listening, thinking, speaking, and error states.</p></article>
+        <article><span>Backend</span><h3>Python + Flask</h3><p>A REST API validates requests, keeps the API key server-side, manages context, and orchestrates the AI services.</p></article>
+        <article><span>AI pipeline</span><h3>STT + LLM + TTS</h3><p>Speech is transcribed, recent context is included in response generation, and the answer is synthesized back into audio.</p></article>
+        <article><span>Resilience</span><h3>Fallback-first UX</h3><p>Typed input works when the microphone is unavailable, and browser speech can read replies if generated audio playback fails.</p></article>
+      </div>
+    </section>
+
+    <section class="container demo-disclaimer">
+      <strong>Safety note</strong>
+      <p>If you are in immediate danger or may hurt yourself or someone else, contact local emergency services or a crisis service and reach out to a trusted person nearby. In the U.S., call or text 988.</p>
     </section>
   </main>
 
+  <script src="site.js"></script>
   <script src="demo-config.js"></script>
   <script src="demo.js"></script>
 </body>
